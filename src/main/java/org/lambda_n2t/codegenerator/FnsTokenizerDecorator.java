@@ -11,7 +11,5 @@ public class FnsTokenizerDecorator extends TokenizerDecorator{
     @Override
     public void tokenize(String input) {
         this.tokenizer.tokenize(input);
-
-        this.markDataTypes(this.tokenizer.getTokens());
     }
 }
