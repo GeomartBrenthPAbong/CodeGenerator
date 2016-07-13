@@ -123,6 +123,8 @@ public class Tokenizer implements AbstractTokenizer{
 
             this.tokens.add(token);
         }
+
+        this.markDataTypes(this.tokens);
     }
 
     private String identifyTokenClass(String value){
@@ -150,6 +152,21 @@ public class Tokenizer implements AbstractTokenizer{
                 tokens.set(i, this.createToken("openPar", "("));
                 break;
             }
+        }
+    }
+
+    private void markDataTypes(List<Pair<String, String>> tokens){
+        Pair<String, String> curToken;
+
+        for (int i = 0; i < tokens.size(); i++){
+            curToken = tokens.get(i);
+
+            if (curToken.getKey().equals("identifier") &&
+                    (i + 1 < tokens.size() && tokens.get(i + 1).getKey().equals("identifier"))){
+                tokens.set(i, new Pair<String, String>("dataType", curToken.getValue()));
+            }
+            else if(curToken.getKey().equals("dataType"))
+                i++;
         }
     }
 }

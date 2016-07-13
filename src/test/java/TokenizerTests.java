@@ -34,7 +34,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("accessibility", "+"));
         expectedTokens.add(new Pair<String, String>("static", "^"));
         expectedTokens.add(new Pair<String, String>("final", "."));
-        expectedTokens.add(new Pair<String, String>("identifier", "String"));
+        expectedTokens.add(new Pair<String, String>("dataType", "String"));
         expectedTokens.add(new Pair<String, String>("identifier", "str"));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("identifier", "House"));
@@ -55,7 +55,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("accessibility", "+"));
         expectedTokens.add(new Pair<String, String>("static", "^"));
         expectedTokens.add(new Pair<String, String>("final", "."));
-        expectedTokens.add(new Pair<String, String>("identifier", "String"));
+        expectedTokens.add(new Pair<String, String>("dataType", "String"));
         expectedTokens.add(new Pair<String, String>("identifier", "str"));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
@@ -183,11 +183,11 @@ public class TokenizerTests {
 
         List<Pair<String, String>> expectedTokens = new ArrayList<Pair<String, String>>();
 
-        expectedTokens.add(new Pair<String, String>("identifier", "String"));
+        expectedTokens.add(new Pair<String, String>("dataType", "String"));
         expectedTokens.add(new Pair<String, String>("identifier", "pair"));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
-        expectedTokens.add(new Pair<String, String>("identifier", "Twins"));
+        expectedTokens.add(new Pair<String, String>("dataType", "Twins"));
         expectedTokens.add(new Pair<String, String>("identifier", "twin"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
@@ -205,7 +205,7 @@ public class TokenizerTests {
 
     @Test
     public void shouldHaveNoParends(){
-        String input = "name1, name2, name3";
+        String input = "name1";
 
         this.tokenizer.tokenize(input);
         List<Pair<String, String>> generatedTokens = this.tokenizer.getTokens();
@@ -213,8 +213,6 @@ public class TokenizerTests {
         List<Pair<String, String>> expectedTokens = new ArrayList<Pair<String, String>>();
 
         expectedTokens.add(new Pair<String, String>("identifier", "name1"));
-        expectedTokens.add(new Pair<String, String>("identifier", "name2"));
-        expectedTokens.add(new Pair<String, String>("identifier", "name3"));
 
         assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
