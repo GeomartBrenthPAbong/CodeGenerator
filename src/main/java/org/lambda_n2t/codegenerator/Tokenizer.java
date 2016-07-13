@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Geomart Brenth Abong on 7/13/2016.
  */
-public class Tokenizer {
+public class Tokenizer implements AbstractTokenizer{
     private List<Pair<String, String>> tokens;
     private ArrayList<Pair<String, Pattern>> tokenClassPatterns;
     private Map oppositesMap;
