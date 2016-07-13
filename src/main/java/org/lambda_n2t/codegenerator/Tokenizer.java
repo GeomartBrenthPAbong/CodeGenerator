@@ -95,8 +95,7 @@ public class Tokenizer {
                         hasPar = false;
                     }
                 }
-
-                if (currentChar.equals(",")) {
+                else if (currentChar.equals(",")) {
                     hasComma = true;
 
                     if(pendingPar > 0) {
@@ -109,6 +108,9 @@ public class Tokenizer {
                         tokens.add(this.createToken("closePar", ")"));
                         tokens.add(this.createToken("openPar", "("));
                     }
+                }
+                else if(currentChar.equals(":")) {
+                    tokens.add(this.createToken("colon", ":"));
                 }
             }
         }

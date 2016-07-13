@@ -59,10 +59,12 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("identifier", "s"));
+        expectedTokens.add(new Pair<String, String>("colon", ":"));
         expectedTokens.add(new Pair<String, String>("identifier", "House"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
         expectedTokens.add(new Pair<String, String>("openPar", "("));
         expectedTokens.add(new Pair<String, String>("identifier", "g"));
+        expectedTokens.add(new Pair<String, String>("colon", ":"));
         expectedTokens.add(new Pair<String, String>("identifier", "Home"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
