@@ -1,2 +1,2 @@
 # CodeGenerator
-A command line program used to quickly generate code(generates java for now but it can be extended) if you are not using any IDE.
+A command line program for quickly generating starting code(generates java for now but it can be extended). Useful if you are not using any IDE or you just want to generate starting code using the cli.
