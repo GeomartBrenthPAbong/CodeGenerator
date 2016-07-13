@@ -10,6 +10,17 @@ public class SyntaxAnalyzerFactory {
             return new VarSyntaxAnalyzer();
         else if(type.equals("fns"))
             return new FnSyntaxAnalyzer();
+        else if(type.equals("type"))
+            return new ClassTypeSyntaxAnalyzer();
+        else if(type.equals("rmvars") || type.equals("clsname") || type.equals("extends") ||
+                type.equals("implements") || type.equals("rmimplements"))
+            return new IdentifierOnlySyntaxAnalyzer();
+        else if(type.equals("rmfns"))
+            return new RMFnSyntaxAnalyzer();
+        else if(type.equals("constructor"))
+            return new ParamSyntaxAnalyzer();
+        else if(type.equals("rmconstructor"))
+            return new DataTypeOnlySyntaxAnalyzer();
         else
             throw new IllegalArgumentException("Invalid Syntax Analyzer.");
     }
