@@ -2,6 +2,7 @@ import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.Tokenizer;
+import org.lambda_n2t.codegenerator.TokenizerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class TokenizerTests {
 
     @Before
     public void initialization(){
-        this.tokenizer = new Tokenizer();
+        this.tokenizer = (Tokenizer) TokenizerFactory.create("tokenizer");
     }
 
     @Test
@@ -39,7 +40,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "House"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -69,7 +70,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -90,7 +91,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "Twins"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -111,7 +112,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "Twins"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -132,7 +133,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "Twins"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -153,7 +154,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "Twins"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -170,7 +171,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("final", "."));
         expectedTokens.add(new Pair<String, String>("NONE", "List<Pair<unsigned long int, String>, Pair<Pair<unsigned long int, String>, String>|pair(Twins)"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -199,7 +200,7 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
         expectedTokens.add(new Pair<String, String>("closePar", ")"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 
     @Test
@@ -215,64 +216,6 @@ public class TokenizerTests {
         expectedTokens.add(new Pair<String, String>("identifier", "name2"));
         expectedTokens.add(new Pair<String, String>("identifier", "name3"));
 
-        assertTrue(this.equalTokens(generatedTokens, expectedTokens));
-    }
-
-    private boolean equalTokens(List<Pair<String, String>> tokens1, List<Pair<String, String>> tokens2){
-        if(tokens1 == null && tokens2 == null)
-            return true;
-
-        if(tokens1 == null || tokens2 == null)
-            return false;
-
-        if (tokens1.size() != tokens2.size())
-            return false;
-
-        boolean isEqual = true;
-
-        for (int i = 0; i < tokens1.size(); i++){
-            Pair<String, String> token1Pair = tokens1.get(i);
-            Pair<String, String> token2Pair = tokens2.get(i);
-
-            isEqual = this.equalPairs(token1Pair, token2Pair);
-
-            if (!isEqual)
-                break;
-        }
-
-        return isEqual;
-    }
-
-
-    private boolean equalPairs(Pair<String, String> p1, Pair<String, String> p2){
-        if (p1 == null && p2 == null)
-            return true;
-
-        if (p1 == null || p2 == null)
-            return false;
-
-        return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
-    }
-
-    /**
-     * Example Usage:
-         System.out.println("The generated: ");
-         this.printTokens(generatedTokens, "\n");
-
-         System.out.println("The expected: ");
-         this.printTokens(expectedTokens, "\n");
-     *
-     * @param p1
-     * @param p2
-     * @return
-     */
-    private void printTokens(List<Pair<String, String>> tokens, String divider){
-        System.out.println("{");
-
-        for (Pair<String, String> token: tokens)
-            System.out.print("['" + token.getKey() + "', '" + token.getValue() + "'], " + divider);
-
-        System.out.println();
-        System.out.println("}");
+        assertTrue(TestHelperFunctions.equalTokens(generatedTokens, expectedTokens));
     }
 }
