@@ -1,0 +1,14 @@
+The generated: 
+{
+P['identifier', 'name1'], 
+['identifier', 'name2'], 
+['identifier', 'name3'], 
+
+}
+The expected: 
+{
+P['identifier', 'name1'], 
+['identifier', 'name2'], 
+['identifier', 'name3'], 
+
+}

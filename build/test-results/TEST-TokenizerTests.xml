@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TokenizerTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-07-13T11:39:26" hostname="n2t" time="0.01">
+  <properties/>
+  <testcase name="shouldAcceptNestedGenerics" classname="TokenizerTests" time="0.003"/>
+  <testcase name="shouldBeAccessibilityStaticFinalIdentifierIdentifierOpenParIdentifierClosePar" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldAcceptGenerics" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldHaveNoneIfHasUnclosedOpposite" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldHaveNoParends" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldAcceptFnsMultiParams" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldAcceptSpacesOnDataType" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldAcceptDoubleNestedGenerics" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldIgnoreSpaces" classname="TokenizerTests" time="0.0"/>
+  <system-out><![CDATA[The generated: 
+{
+['identifier', 'name1'], 
+['identifier', 'name2'], 
+['identifier', 'name3'], 
+
+}
+The expected: 
+{
+['identifier', 'name1'], 
+['identifier', 'name2'], 
+['identifier', 'name3'], 
+
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
