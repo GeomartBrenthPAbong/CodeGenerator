@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TokenizerTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-07-13T14:33:26" hostname="n2t" time="0.015">
+<testsuite name="TokenizerTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-07-13T14:47:30" hostname="n2t" time="0.013">
   <properties/>
-  <testcase name="shouldAcceptNestedGenerics" classname="TokenizerTests" time="0.006"/>
-  <testcase name="shouldBeAccessibilityStaticFinalIdentifierIdentifierOpenParIdentifierClosePar" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldAcceptNestedGenerics" classname="TokenizerTests" time="0.007"/>
+  <testcase name="shouldBeAccessibilityStaticFinalIdentifierIdentifierOpenParIdentifierClosePar" classname="TokenizerTests" time="0.001"/>
   <testcase name="shouldAcceptGenerics" classname="TokenizerTests" time="0.001"/>
-  <testcase name="shouldHaveNoneIfHasUnclosedOpposite" classname="TokenizerTests" time="0.001"/>
-  <testcase name="shouldHaveNoParends" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldHaveNoneIfHasUnclosedOpposite" classname="TokenizerTests" time="0.0"/>
+  <testcase name="shouldHaveNoParends" classname="TokenizerTests" time="0.0"/>
   <testcase name="shouldAcceptFnsMultiParams" classname="TokenizerTests" time="0.001"/>
-  <testcase name="shouldAcceptSpacesOnDataType" classname="TokenizerTests" time="0.0"/>
-  <testcase name="shouldAcceptDoubleNestedGenerics" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldAcceptSpacesOnDataType" classname="TokenizerTests" time="0.001"/>
+  <testcase name="shouldAcceptDoubleNestedGenerics" classname="TokenizerTests" time="0.0"/>
   <testcase name="shouldIgnoreSpaces" classname="TokenizerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -2,7 +2,6 @@ import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.Tokenizer;
-import org.lambda_n2t.codegenerator.TokenizerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ public class TokenizerTests {
 
     @Before
     public void initialization(){
-        this.tokenizer = (Tokenizer) TokenizerFactory.create("tokenizer");
+        this.tokenizer = new Tokenizer();
     }
 
     @Test
