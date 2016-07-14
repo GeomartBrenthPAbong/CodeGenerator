@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FnSyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-14T03:05:45" hostname="n2t" time="0.004">
+<testsuite name="FnSyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-14T03:12:32" hostname="n2t" time="0.004">
   <properties/>
   <testcase name="shouldNotAcceptNoPipeline" classname="FnSyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptGenerics" classname="FnSyntaxAnalyzerTests" time="0.0"/>
-  <testcase name="shouldAcceptMultipleParams" classname="FnSyntaxAnalyzerTests" time="0.001"/>
-  <testcase name="shouldNotAcceptMultiplePar" classname="FnSyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptMultipleParams" classname="FnSyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldNotAcceptMultiplePar" classname="FnSyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptNoPar" classname="FnSyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptNoParams" classname="FnSyntaxAnalyzerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

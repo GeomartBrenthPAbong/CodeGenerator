@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  */
 public class ClassTypeSyntaxAnalyzer extends SyntaxAnalyzer {
     public ClassTypeSyntaxAnalyzer(){
-        String pattern = "^ *\\.? *[iac] *$";
+        String pattern = "^ *[\\+\\-#]? *\\.? *[iac] *$";
         this.p = Pattern.compile(pattern);
     }
 }
