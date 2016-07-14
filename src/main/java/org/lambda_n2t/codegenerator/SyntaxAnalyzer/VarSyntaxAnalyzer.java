@@ -1,10 +1,5 @@
-package org.lambda_n2t.codegenerator;
+package org.lambda_n2t.codegenerator.SyntaxAnalyzer;
 
-import javafx.util.Pair;
-
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
 import java.util.regex.Pattern;
 
 /**

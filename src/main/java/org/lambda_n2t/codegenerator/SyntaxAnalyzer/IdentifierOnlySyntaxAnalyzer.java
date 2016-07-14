@@ -1,4 +1,4 @@
-package org.lambda_n2t.codegenerator;
+package org.lambda_n2t.codegenerator.SyntaxAnalyzer;
 
 import java.util.regex.Pattern;
 
