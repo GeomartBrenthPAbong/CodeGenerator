@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.lambda_n2t.codegenerator.SyntaxAnalyzer;
-import org.lambda_n2t.codegenerator.SyntaxAnalyzerFactory;
+import org.lambda_n2t.codegenerator.SyntaxAnalyzer.SyntaxAnalyzer;
+import org.lambda_n2t.codegenerator.SyntaxAnalyzer.SyntaxAnalyzerFactory;
 
 import java.util.InputMismatchException;
 

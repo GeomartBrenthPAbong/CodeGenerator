@@ -1,4 +1,4 @@
-package org.lambda_n2t.codegenerator;
+package org.lambda_n2t.codegenerator.SyntaxAnalyzer;
 
 /**
  * Created by Geomart Brenth Abong on 7/13/2016.
