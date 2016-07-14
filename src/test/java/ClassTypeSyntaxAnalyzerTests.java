@@ -21,14 +21,14 @@ public class ClassTypeSyntaxAnalyzerTests {
 
     @Test
     public void shouldAcceptFullWithSpaces(){
-        String input = " . i ";
+        String input = " + . i ";
 
         this.accept(input);
     }
 
     @Test
     public void shouldAcceptFullWithNoSpaces(){
-        String input = ".c";
+        String input = "-.c";
 
         this.accept(input);
     }
