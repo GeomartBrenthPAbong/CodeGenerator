@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertTrue;
@@ -26,7 +27,7 @@ public class VariablesUnitTests {
     public void instantiations(){
         this.unit = JavaCodeGeneratorUnitFactory.create("variables");
         this.map = new HashMap();
-        this.map.put("vars", new HashMap());
+        this.map.put("vars", new LinkedHashMap());
     }
 
     @Test

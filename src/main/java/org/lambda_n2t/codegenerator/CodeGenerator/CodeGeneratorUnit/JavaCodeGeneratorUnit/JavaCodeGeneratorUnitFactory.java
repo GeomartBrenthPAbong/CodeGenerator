@@ -17,6 +17,8 @@ public class JavaCodeGeneratorUnitFactory {
             return new ClassBeginUnit();
         else if(type.equals("variables"))
             return new VariablesUnit();
+        else if(type.equals("constructors"))
+            return new ConstructorsUnit();
         else
             throw new IllegalArgumentException("Invalid java code generator unit.");
     }

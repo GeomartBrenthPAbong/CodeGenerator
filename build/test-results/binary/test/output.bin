@@ -1,8 +1,44 @@
-rqThe generated: 
-rq;	private static final String var2;
-	private String var1;
+poThe generated: 
+po‘	/**********************************************
+	* Constructor(s)
+	**********************************************/
 
-rqThe expected: 
-rq;	private String var1;
+	public Test() {
+
+	}
+
+	public Test(String str, int n) {
+
+	}
+
+	public Test(String str) {
+
+	}
+
+
+poThe expected: 
+po‘	/**********************************************
+	* Constructor(s)
+	**********************************************/
+
+	public Test() {
+
+	}
+
+	public Test(String str, int n) {
+
+	}
+
+	public Test(String str) {
+
+	}
+
+
+tsThe generated: 
+ts;	private String var1;
+	private static final String var2;
+
+tsThe expected: 
+ts;	private String var1;
 	private static final String var2;
 
