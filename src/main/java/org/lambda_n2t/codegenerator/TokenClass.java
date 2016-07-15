@@ -8,15 +8,17 @@ import java.util.regex.Pattern;
 public class TokenClass {
     public static String accessibility = "^[\\+\\-#]$";
     public static String cgStatic = "^\\^$";
-    public static String cgFinal = "^\\.$";
-    public static String specialChar = "^[\\+\\-#\\^\\.]$";
+    public static String cgFinal = "^!$";
+    public static String specialChar = "^[\\+\\-#\\^\\!]$";
     public static String identifier = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_]*$";
     public static String separator = "^[\\|:;,\\(\\)]$";
-    public static String dataType = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_ <>,]*$";
+    public static String dataType = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_ <>,]* *\\|$";
     public static String openPar = "^\\($";
     public static String closePar = "^\\)$";
     public static String par = "^[\\(\\)]$";
     public static String opposites = "^[<>]$";
+    public static String importsSpecific = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_\\.\\*]*$";
+    public static String all = "^ *\\* *";
 
     public static Pattern accessibilityPattern = Pattern.compile(accessibility);
     public static Pattern cgStaticPattern = Pattern.compile(cgStatic);
@@ -29,4 +31,6 @@ public class TokenClass {
     public static Pattern closeParPattern = Pattern.compile(closePar);
     public static Pattern parPattern = Pattern.compile(par);
     public static Pattern oppositesPattern = Pattern.compile(opposites);
+    public static Pattern importsSpecificPattern = Pattern.compile(importsSpecific);
+    public static Pattern allPattern = Pattern.compile(all);
 }
