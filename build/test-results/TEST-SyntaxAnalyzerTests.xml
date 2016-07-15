@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-15T06:32:54" hostname="n2t" time="0.002">
+<testsuite name="SyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-15T13:41:30" hostname="n2t" time="0.004">
   <properties/>
   <testcase name="shouldNotAcceptMultipleSpacesDataTypeWithComma" classname="SyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptGenerics" classname="SyntaxAnalyzerTests" time="0.001"/>
   <testcase name="shouldAcceptMultipleSpacesDataType" classname="SyntaxAnalyzerTests" time="0.0"/>
-  <testcase name="shouldAcceptSimplestInput" classname="SyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldAcceptSimplestInput" classname="SyntaxAnalyzerTests" time="0.001"/>
   <testcase name="shouldNotAcceptDoubleIdentifiers" classname="SyntaxAnalyzerTests" time="0.0"/>
-  <testcase name="shouldAcceptNoPar" classname="SyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldAcceptNoPar" classname="SyntaxAnalyzerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

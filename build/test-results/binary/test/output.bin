@@ -1,0 +1,8 @@
+rqThe generated: 
+rq;	private static final String var2;
+	private String var1;
+
+rqThe expected: 
+rq;	private String var1;
+	private static final String var2;
+

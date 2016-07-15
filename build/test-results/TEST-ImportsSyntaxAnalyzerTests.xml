@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ImportsSyntaxAnalyzerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-15T06:32:54" hostname="n2t" time="0.001">
+<testsuite name="ImportsSyntaxAnalyzerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-15T13:41:30" hostname="n2t" time="0.0">
   <properties/>
-  <testcase name="shouldAcceptDottedImports" classname="ImportsSyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptDottedImports" classname="ImportsSyntaxAnalyzerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
