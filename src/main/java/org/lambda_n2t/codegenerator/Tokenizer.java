@@ -23,6 +23,8 @@ public class Tokenizer implements AbstractTokenizer{
         this.tokenClassPatterns.add(new Pair<String, Pattern>("dataType", TokenClass.dataTypePattern));
         this.tokenClassPatterns.add(new Pair<String, Pattern>("openPar", TokenClass.openParPattern));
         this.tokenClassPatterns.add(new Pair<String, Pattern>("closePar", TokenClass.closeParPattern));
+        this.tokenClassPatterns.add(new Pair<String, Pattern>("imports", TokenClass.importsSpecificPattern));
+        this.tokenClassPatterns.add(new Pair<String, Pattern>("all", TokenClass.allPattern));
 
         this.oppositesMap = new HashMap();
         this.oppositesMap.put("<", 1);
@@ -45,6 +47,7 @@ public class Tokenizer implements AbstractTokenizer{
         StringBuilder strBuilder = new StringBuilder();
         String currentChar;
         String accumulatedChars;
+        String tokenClass;
         int opposites = 0;
         int pendingPar = 0;
         boolean hasComma = false;
@@ -64,16 +67,22 @@ public class Tokenizer implements AbstractTokenizer{
             if (specialCharMatcher.matches() && opposites == 0){
                 accumulatedChars = strBuilder.toString().trim();
                 Pair<String, String> token = this.createToken(this.identifyTokenClass(accumulatedChars),
-                                                              accumulatedChars);
+                        accumulatedChars);
                 strBuilder.delete(0, strBuilder.length());
 
                 this.tokens.add(token);
             }
             else if(separatorMatcher.matches() && opposites == 0){
-                strBuilder.deleteCharAt(strBuilder.length() - 1);
+                if (!currentChar.equals("|"))
+                    strBuilder.deleteCharAt(strBuilder.length() - 1);
+
                 accumulatedChars = strBuilder.toString().trim();
-                Pair<String, String> token = this.createToken(this.identifyTokenClass(accumulatedChars),
-                                                              accumulatedChars);
+                tokenClass = this.identifyTokenClass(accumulatedChars);
+
+                if (currentChar.equals("|"))
+                    accumulatedChars = accumulatedChars.substring(0, accumulatedChars.length() - 1).toString().trim();
+
+                Pair<String, String> token = this.createToken(tokenClass, accumulatedChars);
                 strBuilder.delete(0, strBuilder.length());
 
                 this.tokens.add(token);
@@ -104,10 +113,13 @@ public class Tokenizer implements AbstractTokenizer{
                         pendingPar -= 1;
                     }
 
-                    if(hasPar) {
+                    if(hasPar)
                         tokens.add(this.createToken("closePar", ")"));
+
+                    tokens.add(this.createToken("comma", ","));
+
+                    if(hasPar)
                         tokens.add(this.createToken("openPar", "("));
-                    }
                 }
                 else if(currentChar.equals(":")) {
                     tokens.add(this.createToken("colon", ":"));
@@ -123,11 +135,10 @@ public class Tokenizer implements AbstractTokenizer{
 
             this.tokens.add(token);
         }
-
-        this.markDataTypes(this.tokens);
     }
 
     private String identifyTokenClass(String value){
+        value = value.trim();
         Matcher matcher;
 
         for (Pair<String, Pattern> tokenClassPattern: this.tokenClassPatterns){
@@ -152,21 +163,6 @@ public class Tokenizer implements AbstractTokenizer{
                 tokens.set(i, this.createToken("openPar", "("));
                 break;
             }
-        }
-    }
-
-    private void markDataTypes(List<Pair<String, String>> tokens){
-        Pair<String, String> curToken;
-
-        for (int i = 0; i < tokens.size(); i++){
-            curToken = tokens.get(i);
-
-            if (curToken.getKey().equals("identifier") &&
-                    (i + 1 < tokens.size() && tokens.get(i + 1).getKey().equals("identifier"))){
-                tokens.set(i, new Pair<String, String>("dataType", curToken.getValue()));
-            }
-            else if(curToken.getKey().equals("dataType"))
-                i++;
         }
     }
 }

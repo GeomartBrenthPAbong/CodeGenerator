@@ -21,6 +21,8 @@ public class SyntaxAnalyzerFactory {
             return new ParamSyntaxAnalyzer();
         else if(type.equals("rmconstructor"))
             return new DataTypeOnlySyntaxAnalyzer();
+        else if(type.equals("imports") || type.equals("rmimports"))
+            return new ImportsSyntaxAnalyzer();
         else
             throw new IllegalArgumentException("Invalid Syntax Analyzer.");
     }
