@@ -19,6 +19,7 @@ public class VariablesUnit implements CodeGeneratorUnit {
         return this.generatedCode;
     }
 
+    // TODO: Add option to include variable value.
     public void generate(Map map) {
         Map<String, Map> vars = (Map) map.get("vars");
 

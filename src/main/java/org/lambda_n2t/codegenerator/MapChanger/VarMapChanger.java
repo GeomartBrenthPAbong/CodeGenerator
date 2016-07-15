@@ -50,7 +50,9 @@ public class VarMapChanger implements MapChanger {
         }
     }
 
-    private List<Pair<String, String>> processSettersAndGetters(List<Pair<String, String>> tokens, Map<String, String> varsData, int index){
+    private List<Pair<String, String>> processSettersAndGetters(List<Pair<String, String>> tokens,
+                                                                Map<String, String> varsData,
+                                                                int index){
         List<Pair<String, String>> setterAndGetter = new ArrayList<Pair<String, String>>();
 
         if (index < tokens.size() - 1){
