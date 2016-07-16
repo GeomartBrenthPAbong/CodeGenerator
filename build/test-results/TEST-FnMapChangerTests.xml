@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FnMapChangerTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-07-16T07:37:44" hostname="n2t" time="0.006">
+<testsuite name="FnMapChangerTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:11:01" hostname="n2t" time="0.006">
   <properties/>
-  <testcase name="shouldHaveNullVersionIfNoPar" classname="FnMapChangerTests" time="0.002"/>
+  <testcase name="shouldHaveNullVersionIfNoPar" classname="FnMapChangerTests" time="0.001"/>
   <testcase name="shouldHaveNullVersion" classname="FnMapChangerTests" time="0.0"/>
   <testcase name="fnDataShouldBeChangedExceptVersion" classname="FnMapChangerTests" time="0.001"/>
   <testcase name="newVersionShouldBeAdded" classname="FnMapChangerTests" time="0.001"/>
-  <testcase name="fnDataStaticShouldBeRemovedTwoVersions" classname="FnMapChangerTests" time="0.001"/>
+  <testcase name="fnDataStaticShouldBeRemovedTwoVersions" classname="FnMapChangerTests" time="0.0"/>
   <testcase name="shouldHaveTheCorrespondingVersion" classname="FnMapChangerTests" time="0.001"/>
-  <testcase name="shouldIgnoreSpaces" classname="FnMapChangerTests" time="0.0"/>
+  <testcase name="shouldIgnoreSpaces" classname="FnMapChangerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

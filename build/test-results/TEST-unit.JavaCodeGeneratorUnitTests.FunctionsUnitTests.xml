@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-16T07:37:44" hostname="n2t" time="0.001">
+<testsuite name="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:11:01" hostname="n2t" time="0.002">
   <properties/>
   <testcase name="shouldGenerateFunctionWithParams" classname="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" time="0.001"/>
   <testcase name="shouldBeNoGeneration" classname="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" time="0.0"/>
-  <testcase name="shouldGenerateFunctionWithNoParams" classname="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" time="0.0"/>
+  <testcase name="shouldGenerateFunctionWithNoParams" classname="unit.JavaCodeGeneratorUnitTests.FunctionsUnitTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
