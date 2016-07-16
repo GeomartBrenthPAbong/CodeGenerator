@@ -21,7 +21,7 @@ public class ClassBeginsTests {
 
     @Before
     public void instantiations(){
-        this.unit = JavaCodeGeneratorUnitFactory.create("class_begins");
+        this.unit = JavaCodeGeneratorUnitFactory.create("class_begin");
         this.map = new HashMap();
 
         this.map.put("clsname", "");

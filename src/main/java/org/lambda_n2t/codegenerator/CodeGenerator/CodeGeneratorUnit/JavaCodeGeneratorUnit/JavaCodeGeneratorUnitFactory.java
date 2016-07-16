@@ -13,7 +13,7 @@ public class JavaCodeGeneratorUnitFactory {
             return new SpaceUnit();
         else if(type.equals("imports"))
             return new ImportsUnit();
-        else if(type.equals("class_begins"))
+        else if(type.equals("class_begin"))
             return new ClassBeginUnit();
         else if(type.equals("variables"))
             return new VariablesUnit();
@@ -23,6 +23,10 @@ public class JavaCodeGeneratorUnitFactory {
             return new FunctionsUnit();
         else if(type.equals("setters"))
             return new SettersUnit();
+        else if(type.equals("getters"))
+            return new GettersUnit();
+        else if(type.equals("class_end"))
+            return new ClassEndUnit();
         else
             throw new IllegalArgumentException("Invalid java code generator unit.");
     }

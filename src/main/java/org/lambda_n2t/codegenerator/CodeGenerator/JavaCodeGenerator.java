@@ -52,7 +52,7 @@ public class JavaCodeGenerator implements CodeGenerator {
     private void init(){
         String[] units = new String[]{"header", "space", "imports",
                 "class_begin", "variables", "constructors",
-                "setters", "getters", "other_functions", "class_end"};
+                "setters", "getters", "functions", "class_end"};
 
         for (String unit: units)
             this.codeGenUnits.add(JavaCodeGeneratorUnitFactory.create(unit));
