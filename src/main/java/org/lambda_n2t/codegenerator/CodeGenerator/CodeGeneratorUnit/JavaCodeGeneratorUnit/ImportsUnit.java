@@ -8,14 +8,16 @@ import java.util.Map;
  * Created by Geomart Brenth Abong on 7/15/2016.
  */
 public class ImportsUnit implements CodeGeneratorUnit{
-    String generatedCode;
+    StringBuilder generatedCode;
+    String lastGeneratedCode;
 
     public ImportsUnit(){
-        this.generatedCode = "";
+        this.generatedCode = new StringBuilder();
+        this.lastGeneratedCode = "";
     }
 
     public String getGeneratedCode() {
-        return this.generatedCode;
+        return this.lastGeneratedCode;
     }
 
     public void generate(Map map) {
@@ -25,6 +27,8 @@ public class ImportsUnit implements CodeGeneratorUnit{
             return;
 
         for (Map.Entry<String, String> i: imports.entrySet())
-            this.generatedCode += "import " + i.getValue() + ";\n";
+            this.generatedCode.append("import " + i.getValue() + ";\n");
+
+        this.lastGeneratedCode = this.generatedCode.toString();
     }
 }

@@ -9,14 +9,16 @@ import java.util.Map;
  */
 
 public class VariablesUnit implements CodeGeneratorUnit {
-    String generatedCode;
+    StringBuilder generatedCode;
+    String lastGeneratedCode;
 
     public VariablesUnit(){
-        this.generatedCode = "";
+        this.generatedCode = new StringBuilder();
+        this.lastGeneratedCode = "";
     }
 
     public String getGeneratedCode() {
-        return this.generatedCode;
+        return this.lastGeneratedCode;
     }
 
     // TODO: Add option to include variable value.
@@ -28,18 +30,20 @@ public class VariablesUnit implements CodeGeneratorUnit {
 
         for (Map.Entry<String, Map> var: vars.entrySet())
             this.generateVar(var.getValue());
+
+        this.lastGeneratedCode = this.generatedCode.toString();
     }
 
     private void generateVar(Map var){
-        this.generatedCode += "\t" + var.get("accessibility") + " ";
+        this.generatedCode.append("\t" + var.get("accessibility") + " ");
 
         if(var.containsKey("static"))
-            this.generatedCode += var.get("static") + " ";
+            this.generatedCode.append(var.get("static") + " ");
 
         if(var.containsKey("final"))
-            this.generatedCode += var.get("final") + " ";
+            this.generatedCode.append(var.get("final") + " ");
 
-        this.generatedCode += var.get("dataType") + " ";
-        this.generatedCode += var.get("identifier") + ";\n";
+        this.generatedCode.append(var.get("dataType") + " ");
+        this.generatedCode.append(var.get("identifier") + ";\n");
     }
 }
