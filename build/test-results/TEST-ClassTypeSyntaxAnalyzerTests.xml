@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ClassTypeSyntaxAnalyzerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-16T10:59:16" hostname="n2t" time="0.005">
+<testsuite name="ClassTypeSyntaxAnalyzerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-16T11:25:36" hostname="n2t" time="0.007">
   <properties/>
   <testcase name="shouldAcceptMinimum" classname="ClassTypeSyntaxAnalyzerTests" time="0.004"/>
   <testcase name="shouldAcceptFullWithNoSpaces" classname="ClassTypeSyntaxAnalyzerTests" time="0.0"/>
-  <testcase name="shouldAcceptFullWithSpaces" classname="ClassTypeSyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptFullWithSpaces" classname="ClassTypeSyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldNotAccept" classname="ClassTypeSyntaxAnalyzerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

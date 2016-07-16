@@ -2,6 +2,7 @@ package org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGen
 
 import javafx.util.Pair;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.Map;
 
@@ -48,8 +49,6 @@ public class GettersUnit implements CodeGeneratorUnit {
     }
 
     private String getComment(){
-        return "\t//----------------------------------------------|\n" +
-                "\t// Getter(s)\n" +
-                "\t//----------------------------------------------|\n\n";
+        return ResourceLoader.toString(ResourceLoader.load("getters"));
     }
 }

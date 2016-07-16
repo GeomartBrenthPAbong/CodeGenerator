@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -48,9 +49,7 @@ public class SettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                "\t// Setter(s)\n" +
-                "\t//----------------------------------------------|\n\n";
+        String expectedStr = ResourceLoader.toString(ResourceLoader.load("setters"));
         expectedStr += "\tpublic void setHouseName(String houseName) {\n\t\tthis.houseName = houseName;\n\t}\n\n";
         expectedStr += "\tpublic void setOwnerName(String ownerName) {\n\t\tthis.ownerName = ownerName;\n\t}\n\n";
 
@@ -69,9 +68,7 @@ public class SettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                "\t// Setter(s)\n" +
-                "\t//----------------------------------------------|\n\n";
+        String expectedStr = ResourceLoader.toString(ResourceLoader.load("setters"));
         expectedStr += "\tpublic void setHouseName(String houseName);\n";
         expectedStr += "\tpublic void setOwnerName(String ownerName);\n";
 
