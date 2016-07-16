@@ -20,22 +20,14 @@ public class FunctionsUnit implements CodeGeneratorUnit {
         return this.lastGeneratedCode;
     }
 
-    public void generate(Map map) {
-        Map<String, Map> fns = (Map) map.get("fns");
-
-        if (fns.isEmpty())
-            return;
-
-        for (Map.Entry<String, Map> fn: fns.entrySet())
-            this.generateFunction(fn.getValue());
-    }
-
-    private void generateFunction(Map fnData){
+    public void generate(Map map){
+        Map fnData = (Map) map.get("fns");
         Map<String, String> versions = (Map) fnData.get("versions");
 
-        if (versions.isEmpty())
+        if (fnData.isEmpty() || versions.isEmpty())
             return;
 
+        this.generatedCode.append(this.getComment());
         StringBuilder preVersionString = new StringBuilder();
         String preVersion, ret;
 
@@ -55,10 +47,16 @@ public class FunctionsUnit implements CodeGeneratorUnit {
 
         for (Map.Entry<String, String> version: versions.entrySet()){
             this.generatedCode.append("\t" + preVersion + version.getValue() + ") {\n");
-            this.generatedCode.append("\t" + ret + "\n\t}\n\n");
+            this.generatedCode.append("\t\t" + ret + "\n\t}\n\n");
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();
+    }
+
+    private String getComment(){
+        return "\t//----------------------------------------------|\n" +
+                "\t// Other Function(s)\n" +
+                "\t//----------------------------------------------|\n\n";
     }
 
     private String getReturn(String returnType){
@@ -67,6 +65,6 @@ public class FunctionsUnit implements CodeGeneratorUnit {
         else if(returnType.equals("void"))
             return "";
         else
-            return "return null";
+            return "return null;";
     }
 }

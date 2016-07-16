@@ -36,12 +36,12 @@ public class HeaderUnitTests {
         Date date = new Date();
         String curDate = dateFormat.format(date);
 
-        String expectedStr = "/**********************************************\n";
-        expectedStr += "*\n";
-        expectedStr += "* Programmer: Geomart Brenth Abong\n";
-        expectedStr += "* Date Created: " + curDate + "\n";
-        expectedStr += "*\n";
-        expectedStr += "**********************************************/\n";
+        String expectedStr = "//----------------------------------------------|\n";
+        expectedStr += "//\n";
+        expectedStr += "// Programmer: Geomart Brenth Abong\n";
+        expectedStr += "// Date Created: " + curDate + "\n";
+        expectedStr += "//\n";
+        expectedStr += "//----------------------------------------------|\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
