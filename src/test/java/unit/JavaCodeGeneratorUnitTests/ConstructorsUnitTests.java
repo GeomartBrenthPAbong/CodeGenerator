@@ -36,9 +36,9 @@ public class ConstructorsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t/**********************************************\n" +
-                             "\t* Constructor(s)\n" +
-                             "\t**********************************************/\n\n";
+        String expectedStr = "\t//----------------------------------------------|\n" +
+                             "\t// Constructor(s)\n" +
+                             "\t//----------------------------------------------|\n\n";
         expectedStr += "\tpublic Test() {\n\n\t}\n\n";
         expectedStr += "\tpublic Test(String str, int n) {\n\n\t}\n\n";
         expectedStr += "\tpublic Test(String str) {\n\n\t}\n\n";

@@ -44,9 +44,9 @@ public class ConstructorsUnit implements CodeGeneratorUnit {
     }
 
     private String getComment(){
-        return "\t/**********************************************\n" +
-                "\t* Constructor(s)\n" +
-                "\t**********************************************/\n\n";
+        return "\t//----------------------------------------------|\n" +
+                "\t// Constructor(s)\n" +
+                "\t//----------------------------------------------|\n\n";
     }
 
     private void generateConstructor(String constructorParams, String clsName){

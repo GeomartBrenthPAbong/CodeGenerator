@@ -3,6 +3,7 @@ package org.lambda_n2t.codegenerator.MapChanger;
 import javafx.util.Pair;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +49,7 @@ public class FnMapChanger implements MapChanger {
         if (curFn.containsKey("versions"))
             versions = (Map<String, String>) curFn.get("versions");
         else {
-            versions = new HashMap<String, String>();
+            versions = new LinkedHashMap<String, String>();
             curFn.put("versions", versions);
         }
 

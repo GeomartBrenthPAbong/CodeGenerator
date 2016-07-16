@@ -54,12 +54,6 @@ public class VariablesUnitTests {
         String expectedStr = "\tprivate String var1;\n";
         expectedStr += "\tprivate static final String var2;\n";
 
-        System.out.println("The generated: ");
-        System.out.println(this.unit.getGeneratedCode());
-
-        System.out.println("The expected: ");
-        System.out.println(expectedStr);
-
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
 }

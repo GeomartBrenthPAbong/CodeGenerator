@@ -1,8 +1,0 @@
-tsThe generated: 
-ts;	private String var1;
-	private static final String var2;
-
-tsThe expected: 
-ts;	private String var1;
-	private static final String var2;
-
