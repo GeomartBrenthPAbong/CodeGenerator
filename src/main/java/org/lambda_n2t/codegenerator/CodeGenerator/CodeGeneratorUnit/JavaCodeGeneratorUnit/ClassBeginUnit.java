@@ -8,40 +8,44 @@ import java.util.Map;
  * Created by Geomart Brenth Abong on 7/15/2016.
  */
 public class ClassBeginUnit implements CodeGeneratorUnit{
-    String generatedCode;
+    StringBuilder generatedCode;
+    String lastGeneratedCode;
 
     public ClassBeginUnit(){
-        this.generatedCode = "";
+        this.generatedCode = new StringBuilder();
+        this.lastGeneratedCode = "";
     }
 
     public String getGeneratedCode() {
-        return this.generatedCode;
+        return this.lastGeneratedCode;
     }
 
     public void generate(Map map) {
         this.generateType(map);
-        this.generatedCode += map.get("clsname");
+        this.generatedCode.append(map.get("clsname"));
         this.generateExtends(map);
         this.generateImplements(map);
-        this.generatedCode += " {\n";
+        this.generatedCode.append(" {\n");
+
+        this.lastGeneratedCode = this.generatedCode.toString();
     }
 
     private void generateType(Map map){
         Map type = (Map) map.get("type");
 
-        this.generatedCode += type.get("accessibility") + " ";
+        this.generatedCode.append(type.get("accessibility") + " ");
 
         if (type.containsKey("final"))
-            this.generatedCode += type.get("final") + " ";
+            this.generatedCode.append(type.get("final") + " ");
 
-        this.generatedCode += type.get("identifier") + " ";
+        this.generatedCode.append(type.get("identifier") + " ");
     }
 
     private void generateExtends(Map map){
         String extendsName = (String) map.get("extends");
 
         if (extendsName.trim().length() > 0)
-            this.generatedCode += " extends " + extendsName;
+            this.generatedCode.append(" extends " + extendsName);
     }
 
     private void generateImplements(Map map){
@@ -53,7 +57,7 @@ public class ClassBeginUnit implements CodeGeneratorUnit{
             for (Map.Entry<String, String> i: implementNames.entrySet())
                 str.append(" " + i.getValue() + ",");
 
-            this.generatedCode += str.substring(0, str.length() - 1);
+            this.generatedCode.append(str.substring(0, str.length() - 1));
         }
     }
 }

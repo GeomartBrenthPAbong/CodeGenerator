@@ -1,39 +1,3 @@
-poThe generated: 
-poÔ	/**********************************************
-	* Constructor(s)
-	**********************************************/
-
-	public Test() {
-
-	}
-
-	public Test(String str, int n) {
-
-	}
-
-	public Test(String str) {
-
-	}
-
-
-poThe expected: 
-poÔ	/**********************************************
-	* Constructor(s)
-	**********************************************/
-
-	public Test() {
-
-	}
-
-	public Test(String str, int n) {
-
-	}
-
-	public Test(String str) {
-
-	}
-
-
 tsThe generated: 
 ts;	private String var1;
 	private static final String var2;
