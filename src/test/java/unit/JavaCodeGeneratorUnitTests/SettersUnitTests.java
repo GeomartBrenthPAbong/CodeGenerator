@@ -24,6 +24,10 @@ public class SettersUnitTests {
         this.unit = JavaCodeGeneratorUnitFactory.create("setters");
         this.map = new HashMap();
         this.map.put("s", new LinkedHashMap());
+        this.map.put("type", new HashMap());
+
+        Map type = (Map) this.map.get("type");
+        type.put("identifier", "class");
     }
 
     @Test
@@ -49,6 +53,27 @@ public class SettersUnitTests {
                 "\t//----------------------------------------------|\n\n";
         expectedStr += "\tpublic void setHouseName(String houseName) {\n\t\tthis.houseName = houseName;\n\t}\n\n";
         expectedStr += "\tpublic void setOwnerName(String ownerName) {\n\t\tthis.ownerName = ownerName;\n\t}\n\n";
+
+        assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
+    }
+
+    @Test
+    public void shouldHaveNoFunctionBodyIfInterface(){
+        Map type = (Map) this.map.get("type");
+        type.put("identifier", "interface");
+
+        Map setters = (Map) this.map.get("s");
+
+        setters.put("houseName", new Pair<String, String>("String", "HouseName"));
+        setters.put("ownerName", new Pair<String, String>("String", "OwnerName"));
+
+        this.unit.generate(this.map);
+
+        String expectedStr = "\t//----------------------------------------------|\n" +
+                "\t// Setter(s)\n" +
+                "\t//----------------------------------------------|\n\n";
+        expectedStr += "\tpublic void setHouseName(String houseName);\n";
+        expectedStr += "\tpublic void setOwnerName(String ownerName);\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

@@ -24,6 +24,10 @@ public class GettersUnitTests {
         this.unit = JavaCodeGeneratorUnitFactory.create("getters");
         this.map = new HashMap();
         this.map.put("g", new LinkedHashMap());
+        this.map.put("type", new HashMap());
+
+        Map type = (Map) this.map.get("type");
+        type.put("identifier", "class");
     }
 
     @Test
@@ -49,6 +53,27 @@ public class GettersUnitTests {
                 "\t//----------------------------------------------|\n\n";
         expectedStr += "\tpublic String getHouseName() {\n\t\treturn this.houseName;\n\t}\n\n";
         expectedStr += "\tpublic String getOwnerName() {\n\t\treturn this.ownerName;\n\t}\n\n";
+
+        assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
+    }
+
+    @Test
+    public void shouldHaveNoFunctionBodyIfInterface(){
+        Map type = (Map) this.map.get("type");
+        type.put("identifier", "interface");
+
+        Map getters = (Map) this.map.get("g");
+
+        getters.put("houseName", new Pair<String, String>("String", "HouseName"));
+        getters.put("ownerName", new Pair<String, String>("String", "OwnerName"));
+
+        this.unit.generate(this.map);
+
+        String expectedStr = "\t//----------------------------------------------|\n" +
+                "\t// Getter(s)\n" +
+                "\t//----------------------------------------------|\n\n";
+        expectedStr += "\tpublic String getHouseName();\n";
+        expectedStr += "\tpublic String getOwnerName();\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

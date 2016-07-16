@@ -29,8 +29,6 @@ public class JavaCodeGenerator implements CodeGenerator {
     }
 
     public void generate(Map map) {
-        this.defaultsAndMappings(map);
-
         try {
             PrintWriter writer = new PrintWriter(map.get("clsname") + ".java", "UTF-8");
 
@@ -56,9 +54,5 @@ public class JavaCodeGenerator implements CodeGenerator {
 
         for (String unit: units)
             this.codeGenUnits.add(JavaCodeGeneratorUnitFactory.create(unit));
-    }
-
-    private void defaultsAndMappings(Map map){
-        // Includes uppercasing of first letters
     }
 }
