@@ -44,10 +44,15 @@ public class FunctionsUnit implements CodeGeneratorUnit {
 
         preVersion = preVersionString.toString();
         ret = this.getReturn((String) fnData.get("dataType"));
+        Map type = (Map) map.get("type");
 
         for (Map.Entry<String, String> version: versions.entrySet()){
-            this.generatedCode.append("\t" + preVersion + version.getValue() + ") {\n");
-            this.generatedCode.append("\t\t" + ret + "\n\t}\n\n");
+            this.generatedCode.append("\t" + preVersion + version.getValue() + ")");
+
+            if (type.get("identifier").equals("interface"))
+                this.generatedCode.append(";\n");
+            else
+                this.generatedCode.append(" {\n\t\t" + ret + "\n\t}\n\n");
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();

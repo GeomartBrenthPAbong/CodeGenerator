@@ -30,13 +30,19 @@ public class SettersUnit implements CodeGeneratorUnit {
 
         Pair<String, String> paramTypeAndName;
         this.generatedCode.append(this.getComment());
+        Map type = (Map) map.get("type");
 
         for (Map.Entry<String, Pair<String, String>> setter: setters.entrySet()){
             paramTypeAndName = setter.getValue();
             this.generatedCode.append("\tpublic void set" + paramTypeAndName.getValue());
-            this.generatedCode.append("(" + paramTypeAndName.getKey() + " " + setter.getKey() + ") {\n");
-            this.generatedCode.append("\t\tthis." + setter.getKey() + " = " + setter.getKey() + ";\n");
-            this.generatedCode.append("\t}\n\n");
+            this.generatedCode.append("(" + paramTypeAndName.getKey() + " " + setter.getKey() + ")");
+
+            if (type.get("identifier").equals("interface"))
+                this.generatedCode.append(";\n");
+            else {
+                this.generatedCode.append(" {\n\t\tthis." + setter.getKey() + " = " + setter.getKey() + ";\n");
+                this.generatedCode.append("\t}\n\n");
+            }
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();

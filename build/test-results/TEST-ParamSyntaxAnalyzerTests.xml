@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ParamSyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:24:13" hostname="n2t" time="0.006">
+<testsuite name="ParamSyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-16T10:59:16" hostname="n2t" time="0.004">
   <properties/>
   <testcase name="shouldAcceptGenerics" classname="ParamSyntaxAnalyzerTests" time="0.001"/>
-  <testcase name="shouldAcceptMultipleParams" classname="ParamSyntaxAnalyzerTests" time="0.001"/>
-  <testcase name="shouldNotAcceptDataTypeOnly" classname="ParamSyntaxAnalyzerTests" time="0.002"/>
-  <testcase name="shouldAcceptSingleParam" classname="ParamSyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldAcceptMultipleParams" classname="ParamSyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldNotAcceptDataTypeOnly" classname="ParamSyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptSingleParam" classname="ParamSyntaxAnalyzerTests" time="0.001"/>
   <testcase name="shouldNotAcceptIdentifierOnly" classname="ParamSyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldIgnoreSpaces" classname="ParamSyntaxAnalyzerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

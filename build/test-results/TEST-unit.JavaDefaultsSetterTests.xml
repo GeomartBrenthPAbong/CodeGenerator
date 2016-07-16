@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.JavaDefaultsSetterTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-16T10:59:16" hostname="n2t" time="0.003">
+  <properties/>
+  <testcase name="shouldSetDefaults" classname="unit.JavaDefaultsSetterTests" time="0.002"/>
+  <testcase name="constructorsShouldBeRemoved" classname="unit.JavaDefaultsSetterTests" time="0.001"/>
+  <system-out><![CDATA[The generated: 
+{implements={}, constructors={String=String str}, imports={}, s={var1=String=VarOne, var2=String=VarTwo}, extends=, pname=, g={var1=String=VarOne, var2=String=VarTwo}, clsname=ClassName, fns={fn1={static=static, accessibility=public, final=final}, fn2={accessibility=public}}, vars={var1={static=static, accessibility=public, final=final}, var2={accessibility=public}}, type={identifier=class, static=static, accessibility=public, final=final}}
+The expected: 
+{implements={}, constructors={String=String str}, imports={}, s={var1=String=VarOne, var2=String=VarTwo}, extends=, pname=, g={var1=String=VarOne, var2=String=VarTwo}, clsname=ClassName, fns={fn1={static=static, accessibility=public, final=final}, fn2={accessibility=public}}, vars={var1={static=static, accessibility=public, final=final}, var2={accessibility=public}}, type={identifier=class, static=static, accessibility=public, final=final}}
+The generated: 
+{implements={}, constructors={}, imports={}, s={var1=String=VarOne, var2=String=VarTwo}, extends=, pname=, g={var1=String=VarOne, var2=String=VarTwo}, clsname=ClassName, fns={fn1={static=static, accessibility=public, final=final}, fn2={accessibility=public}}, vars={var1={static=static, accessibility=public, final=final}, var2={accessibility=public}}, type={identifier=interface, static=static, accessibility=public, final=final}}
+The expected: 
+{implements={}, constructors={}, imports={}, s={var1=String=VarOne, var2=String=VarTwo}, extends=, pname=, g={var1=String=VarOne, var2=String=VarTwo}, clsname=ClassName, fns={fn1={static=static, accessibility=public, final=final}, fn2={accessibility=public}}, vars={var1={static=static, accessibility=public, final=final}, var2={accessibility=public}}, type={identifier=interface, static=static, accessibility=public, final=final}}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
