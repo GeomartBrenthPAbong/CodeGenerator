@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JavaCodeGeneratorUnitTests.HeaderUnitTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-16T07:37:44" hostname="n2t" time="0.019">
+<testsuite name="JavaCodeGeneratorUnitTests.HeaderUnitTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:11:01" hostname="n2t" time="0.018">
   <properties/>
-  <testcase name="headerGeneratedCorrectly" classname="JavaCodeGeneratorUnitTests.HeaderUnitTests" time="0.019"/>
+  <testcase name="headerGeneratedCorrectly" classname="JavaCodeGeneratorUnitTests.HeaderUnitTests" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

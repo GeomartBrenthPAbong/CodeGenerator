@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ImportsMapChangerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-16T07:37:44" hostname="n2t" time="0.002">
+<testsuite name="ImportsMapChangerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:11:01" hostname="n2t" time="0.001">
   <properties/>
-  <testcase name="importNamesShouldBeAdded" classname="ImportsMapChangerTests" time="0.002"/>
+  <testcase name="importNamesShouldBeAdded" classname="ImportsMapChangerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
