@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -36,9 +37,7 @@ public class ConstructorsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                             "\t// Constructor(s)\n" +
-                             "\t//----------------------------------------------|\n\n";
+        String expectedStr = ResourceLoader.toString(ResourceLoader.load("constructors"));
         expectedStr += "\tpublic Test() {\n\n\t}\n\n";
         expectedStr += "\tpublic Test(String str, int n) {\n\n\t}\n\n";
         expectedStr += "\tpublic Test(String str) {\n\n\t}\n\n";

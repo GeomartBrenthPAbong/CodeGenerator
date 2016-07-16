@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.TokenizerTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-07-16T10:59:16" hostname="n2t" time="0.008">
+<testsuite name="unit.TokenizerTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-07-16T11:25:37" hostname="n2t" time="0.005">
   <properties/>
-  <testcase name="shouldAcceptNestedGenerics" classname="unit.TokenizerTests" time="0.004"/>
+  <testcase name="shouldAcceptNestedGenerics" classname="unit.TokenizerTests" time="0.001"/>
   <testcase name="shouldBeAccessibilityStaticFinalIdentifierIdentifierOpenParIdentifierClosePar" classname="unit.TokenizerTests" time="0.0"/>
-  <testcase name="shouldAcceptGenerics" classname="unit.TokenizerTests" time="0.0"/>
-  <testcase name="shouldHaveNoneIfHasUnclosedOpposite" classname="unit.TokenizerTests" time="0.001"/>
+  <testcase name="shouldAcceptGenerics" classname="unit.TokenizerTests" time="0.001"/>
+  <testcase name="shouldHaveNoneIfHasUnclosedOpposite" classname="unit.TokenizerTests" time="0.0"/>
   <testcase name="shouldHaveNoParends" classname="unit.TokenizerTests" time="0.0"/>
   <testcase name="shouldAcceptFnsMultiParams" classname="unit.TokenizerTests" time="0.0"/>
   <testcase name="shouldAcceptSpacesOnDataType" classname="unit.TokenizerTests" time="0.001"/>

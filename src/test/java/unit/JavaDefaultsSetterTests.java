@@ -138,12 +138,6 @@ public class JavaDefaultsSetterTests {
         eg.put("var1", new Pair<String, String>("String", "VarOne"));
         eg.put("var2", new Pair<String, String>("String", "VarTwo"));
 
-        System.out.println("The generated: ");
-        System.out.println(this.map);
-
-        System.out.println("The expected: ");
-        System.out.println(expectedMap);
-
         assertTrue(expectedMap.equals(this.map));
     }
 
@@ -244,12 +238,6 @@ public class JavaDefaultsSetterTests {
 
         eg.put("var1", new Pair<String, String>("String", "VarOne"));
         eg.put("var2", new Pair<String, String>("String", "VarTwo"));
-
-        System.out.println("The generated: ");
-        System.out.println(this.map);
-
-        System.out.println("The expected: ");
-        System.out.println(expectedMap);
 
         assertTrue(expectedMap.equals(this.map));
     }

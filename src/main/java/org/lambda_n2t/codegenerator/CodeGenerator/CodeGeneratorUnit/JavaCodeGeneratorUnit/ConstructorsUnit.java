@@ -1,6 +1,7 @@
 package org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit;
 
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.Map;
 
@@ -44,9 +45,7 @@ public class ConstructorsUnit implements CodeGeneratorUnit {
     }
 
     private String getComment(){
-        return "\t//----------------------------------------------|\n" +
-                "\t// Constructor(s)\n" +
-                "\t//----------------------------------------------|\n\n";
+        return ResourceLoader.toString(ResourceLoader.load("constructors"));
     }
 
     private void generateConstructor(String constructorParams, String clsName){
