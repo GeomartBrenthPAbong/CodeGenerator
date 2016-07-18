@@ -47,15 +47,13 @@ public class Machine {
     public void add(String command, String arg){
         this.tokenizer.tokenize(arg);
 
-        if (!command.equals("pname")) {
-            if (!this.syntaxAnalyzerPool.containsKey(command)) {
-                this.syntaxAnalyzer = SyntaxAnalyzerFactory.create(command);
-                this.syntaxAnalyzerPool.put(command, this.syntaxAnalyzer);
-            } else
-                this.syntaxAnalyzer = this.syntaxAnalyzerPool.get(command);
+        if (!this.syntaxAnalyzerPool.containsKey(command)) {
+            this.syntaxAnalyzer = SyntaxAnalyzerFactory.create(command);
+            this.syntaxAnalyzerPool.put(command, this.syntaxAnalyzer);
+        } else
+            this.syntaxAnalyzer = this.syntaxAnalyzerPool.get(command);
 
-            this.syntaxAnalyzer.analyze(arg, this.tokenizer.getTokens());
-        }
+        this.syntaxAnalyzer.analyze(arg, this.tokenizer.getTokens());
 
         if (!this.mapChangerPool.containsKey(command)){
             this.mapChanger = MapChangerFactory.create(command);

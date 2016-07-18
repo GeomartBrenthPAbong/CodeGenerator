@@ -27,7 +27,11 @@ public abstract class SyntaxAnalyzer {
 
     public void analyze(List<Pair<String, String>> tokens) throws InputMismatchException{
         for (Pair<String, String> token: tokens)
-            if (token.getKey().equals("NONE"))
+            if (token.getKey().equals("NONE") && !this.noneAllowed())
                 throw new InputMismatchException();
+    }
+
+    protected boolean noneAllowed() {
+        return false;
     }
 }

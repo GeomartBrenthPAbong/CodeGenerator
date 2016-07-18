@@ -10,4 +10,9 @@ public class AlwaysPassesSyntaxAnalyzer extends SyntaxAnalyzer {
         String pattern = "^.*$";
         this.p = Pattern.compile(pattern);
     }
+
+    @Override
+    protected boolean noneAllowed() {
+        return true;
+    }
 }
