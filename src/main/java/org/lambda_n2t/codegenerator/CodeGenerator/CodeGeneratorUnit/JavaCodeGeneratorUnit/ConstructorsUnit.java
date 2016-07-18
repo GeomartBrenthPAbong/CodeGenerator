@@ -31,6 +31,7 @@ public class ConstructorsUnit implements CodeGeneratorUnit {
         if (constructors.isEmpty())
             return;
 
+        this.generatedCode.append("\n");
         this.generatedCode.append(this.getComment());
 
         if (constructors.containsKey("class")){
@@ -42,6 +43,7 @@ public class ConstructorsUnit implements CodeGeneratorUnit {
             this.generateConstructor(constructor.getValue(), (String) map.get("clsname"));
 
         this.lastGenerateCode = this.generatedCode.toString();
+        this.generatedCode.delete(0, this.generatedCode.length());
     }
 
     private String getComment(){
@@ -49,6 +51,6 @@ public class ConstructorsUnit implements CodeGeneratorUnit {
     }
 
     private void generateConstructor(String constructorParams, String clsName){
-        this.generatedCode.append("\tpublic " + clsName + "(" + constructorParams + ") {\n\n\t}\n\n");
+        this.generatedCode.append("\n\tpublic " + clsName + "(" + constructorParams + ") {\n\n\t}\n");
     }
 }

@@ -3,6 +3,15 @@ version '1.0-atom'
 
 apply plugin: 'java'
 
+sourceSets {
+    main.java.srcDir "src/main/java"
+    main.resources.srcDir "src/main/resources"
+}
+
+jar {
+    manifest.attributes "Main-Class": "org.lambda_n2t.codegenerator.Driver"
+}
+
 sourceCompatibility = 1.8
 
 repositories {

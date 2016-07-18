@@ -11,13 +11,12 @@ import java.util.Map;
 
 public class PNameMapChanger implements MapChanger {
     public void change(List<Pair<String, String>> tokens, Map map) {
-        String varName = "";
+        StringBuilder varName = new StringBuilder();
 
         // Doesn't really need a for loop but just to be safe.
         for (Pair<String, String> token: tokens)
-            if (token.getKey().equals("identifier"))
-                varName = token.getValue();
+            varName.append(token.getValue());
 
-        map.put("pname", varName.trim());
+        map.put("pname", varName.toString().trim());
     }
 }

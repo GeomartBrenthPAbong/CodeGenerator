@@ -66,7 +66,7 @@ public class MapDefaultsSetter implements DefaultsSetter{
             var = vars.get(varData.getKey());
 
             if (!var.containsKey("accessibility"))
-                var.put("accessibility", "+");
+                var.put("accessibility", "-");
 
             for (String item: this.commonLoopables) {
                 if (var.containsKey(item))

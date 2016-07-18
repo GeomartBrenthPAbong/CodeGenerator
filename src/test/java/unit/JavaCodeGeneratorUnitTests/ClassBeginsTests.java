@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
+import org.lambda_n2t.codegenerator.DefaultsSetter;
+import org.lambda_n2t.codegenerator.DefaultsSetterFactory;
 
 import java.util.EmptyStackException;
 import java.util.HashMap;
@@ -47,7 +49,7 @@ public class ClassBeginsTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "public final class Labrador extends Dog implements Animal, Pet {\n";
+        String expectedStr = "\npublic final class Labrador extends Dog implements Animal, Pet {\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

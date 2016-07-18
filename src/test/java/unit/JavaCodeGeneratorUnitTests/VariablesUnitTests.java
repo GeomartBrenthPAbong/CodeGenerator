@@ -51,7 +51,7 @@ public class VariablesUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\tprivate String var1;\n";
+        String expectedStr = "\n\tprivate String var1;\n";
         expectedStr += "\tprivate static final String var2;\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));

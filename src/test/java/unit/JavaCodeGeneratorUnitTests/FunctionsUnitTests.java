@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -38,12 +39,14 @@ public class FunctionsUnitTests {
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
 
         Map functions = (Map) this.map.get("fns");
-        Map versions = new LinkedHashMap();
+        Map f1 = new HashMap();
 
-        functions.put("accessibility", "public");
-        functions.put("dataType", "String");
-        functions.put("identifier", "processHouseName");
-        functions.put("versions", versions);
+        f1.put("accessibility", "public");
+        f1.put("dataType", "String");
+        f1.put("identifier", "processHouseName");
+        f1.put("versions", null);
+
+        functions.put("processHouseName", f1);
 
         this.unit.generate(this.map);
 
@@ -55,18 +58,21 @@ public class FunctionsUnitTests {
         Map functions = (Map) this.map.get("fns");
         Map versions = new LinkedHashMap();
 
-        functions.put("accessibility", "public");
-        functions.put("dataType", "String");
-        functions.put("identifier", "processHouseName");
-        functions.put("versions", versions);
+        Map f1 = new HashMap();
+
+        f1.put("accessibility", "public");
+        f1.put("dataType", "String");
+        f1.put("identifier", "processHouseName");
+        f1.put("versions", versions);
+
+        functions.put("processHouseName", f1);
 
         versions.put("null", "");
+
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                "\t// Other Function(s)\n" +
-                "\t//----------------------------------------------|\n\n";
-        expectedStr += "\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n\n";
+        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -76,10 +82,14 @@ public class FunctionsUnitTests {
         Map functions = (Map) this.map.get("fns");
         Map versions = new LinkedHashMap();
 
-        functions.put("accessibility", "public");
-        functions.put("dataType", "String");
-        functions.put("identifier", "processHouseName");
-        functions.put("versions", versions);
+        Map f1 = new HashMap();
+
+        f1.put("accessibility", "public");
+        f1.put("dataType", "String");
+        f1.put("identifier", "processHouseName");
+        f1.put("versions", versions);
+
+        functions.put("processHouseName", f1);
 
         versions.put("null", "");
         versions.put("String|int", "String daddyName, int age");
@@ -87,12 +97,10 @@ public class FunctionsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                "\t// Other Function(s)\n" +
-                "\t//----------------------------------------------|\n\n";
-        expectedStr += "\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n\n";
+        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n\n";
         expectedStr += "\tpublic String processHouseName(String daddyName, int age) {\n\t\treturn null;\n\t}\n\n";
-        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName) {\n\t\treturn null;\n\t}\n\n";
+        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName) {\n\t\treturn null;\n\t}\n";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -105,10 +113,14 @@ public class FunctionsUnitTests {
         Map functions = (Map) this.map.get("fns");
         Map versions = new LinkedHashMap();
 
-        functions.put("accessibility", "public");
-        functions.put("dataType", "String");
-        functions.put("identifier", "processHouseName");
-        functions.put("versions", versions);
+        Map f1 = new HashMap();
+
+        f1.put("accessibility", "public");
+        f1.put("dataType", "String");
+        f1.put("identifier", "processHouseName");
+        f1.put("versions", versions);
+
+        functions.put("processHouseName", f1);
 
         versions.put("null", "");
         versions.put("String|int", "String daddyName, int age");
@@ -116,12 +128,10 @@ public class FunctionsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\t//----------------------------------------------|\n" +
-                "\t// Other Function(s)\n" +
-                "\t//----------------------------------------------|\n\n";
-        expectedStr += "\tpublic String processHouseName();\n";
+        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\tpublic String processHouseName();\n";
         expectedStr += "\tpublic String processHouseName(String daddyName, int age);\n";
-        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName);\n";
+        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName);";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

@@ -26,9 +26,12 @@ public class ImportsUnit implements CodeGeneratorUnit{
         if (imports.isEmpty())
             return;
 
+        this.generatedCode.append("\n");
+
         for (Map.Entry<String, String> i: imports.entrySet())
             this.generatedCode.append("import " + i.getValue() + ";\n");
 
         this.lastGeneratedCode = this.generatedCode.toString();
+        this.generatedCode.delete(0, this.generatedCode.length());
     }
 }

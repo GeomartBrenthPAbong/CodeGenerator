@@ -106,12 +106,12 @@ public class JavaDefaultsSetterTests {
 
         Map eVars = (Map) expectedMap.get("vars");
         Map eVar1 = new HashMap();
-        eVar1.put("accessibility", "public");
+        eVar1.put("accessibility", "private");
         eVar1.put("final", "final");
         eVar1.put("static", "static");
 
         Map eVar2 = new HashMap();
-        eVar2.put("accessibility", "public");
+        eVar2.put("accessibility", "private");
 
         eVars.put("var1", eVar1);
         eVars.put("var2", eVar2);
@@ -207,12 +207,12 @@ public class JavaDefaultsSetterTests {
 
         Map eVars = (Map) expectedMap.get("vars");
         Map eVar1 = new HashMap();
-        eVar1.put("accessibility", "public");
+        eVar1.put("accessibility", "private");
         eVar1.put("final", "final");
         eVar1.put("static", "static");
 
         Map eVar2 = new HashMap();
-        eVar2.put("accessibility", "public");
+        eVar2.put("accessibility", "private");
 
         eVars.put("var1", eVar1);
         eVars.put("var2", eVar2);

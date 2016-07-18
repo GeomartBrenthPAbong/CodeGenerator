@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RMConstructorMapChangerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-16T11:25:36" hostname="n2t" time="0.001">
+<testsuite name="RMConstructorMapChangerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-18T07:49:56" hostname="n2t" time="0.001">
   <properties/>
   <testcase name="allShouldBeRemoved" classname="RMConstructorMapChangerTests" time="0.001"/>
   <testcase name="constructorShouldBeRemoved" classname="RMConstructorMapChangerTests" time="0.0"/>

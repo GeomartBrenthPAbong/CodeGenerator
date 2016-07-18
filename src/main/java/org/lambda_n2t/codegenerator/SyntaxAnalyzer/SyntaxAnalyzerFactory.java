@@ -23,6 +23,8 @@ public class SyntaxAnalyzerFactory {
             return new DataTypeOnlySyntaxAnalyzer();
         else if(type.equals("imports") || type.equals("rmimports"))
             return new ImportsSyntaxAnalyzer();
+        else if(type.equals("pname"))
+            return new AlwaysPassesSyntaxAnalyzer();
         else
             throw new IllegalArgumentException("Invalid Syntax Analyzer.");
     }
