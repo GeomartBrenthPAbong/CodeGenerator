@@ -1,16 +1,17 @@
 package org.lambda_n2t.codegenerator;
 
-import javafx.util.Pair;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGenerator;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorFactory;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetter;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetterFactory;
 import org.lambda_n2t.codegenerator.MapChanger.MapChanger;
 import org.lambda_n2t.codegenerator.MapChanger.MapChangerFactory;
 import org.lambda_n2t.codegenerator.SyntaxAnalyzer.SyntaxAnalyzer;
 import org.lambda_n2t.codegenerator.SyntaxAnalyzer.SyntaxAnalyzerFactory;
+import org.lambda_n2t.codegenerator.Tokenizer.Tokenizer;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

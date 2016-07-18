@@ -3,7 +3,7 @@ package unit;
 import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
-import org.lambda_n2t.codegenerator.Tokenizer;
+import org.lambda_n2t.codegenerator.Tokenizer.Tokenizer;
 
 import java.util.ArrayList;
 import java.util.List;

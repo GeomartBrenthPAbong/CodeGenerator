@@ -3,11 +3,10 @@ package unit;
 import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
-import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorFactory;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
-import org.lambda_n2t.codegenerator.DefaultsSetter;
-import org.lambda_n2t.codegenerator.DefaultsSetterFactory;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetter;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetterFactory;
 import org.lambda_n2t.codegenerator.Machine;
 
 import java.io.BufferedReader;
