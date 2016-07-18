@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.MapChanger.MapChanger;
 import org.lambda_n2t.codegenerator.MapChanger.MapChangerFactory;
-import org.lambda_n2t.codegenerator.Tokenizer;
 
 import java.util.ArrayList;
 import java.util.HashMap;

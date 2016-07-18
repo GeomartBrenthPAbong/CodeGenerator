@@ -3,8 +3,8 @@ package unit;
 import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
-import org.lambda_n2t.codegenerator.DefaultsSetter;
-import org.lambda_n2t.codegenerator.DefaultsSetterFactory;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetter;
+import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetterFactory;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

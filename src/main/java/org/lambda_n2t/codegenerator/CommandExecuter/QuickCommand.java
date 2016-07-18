@@ -1,4 +1,7 @@
-package org.lambda_n2t.codegenerator;
+package org.lambda_n2t.codegenerator.CommandExecuter;
+
+import org.lambda_n2t.codegenerator.Machine;
+import org.lambda_n2t.codegenerator.Settings;
 
 import java.util.HashMap;
 import java.util.Map;

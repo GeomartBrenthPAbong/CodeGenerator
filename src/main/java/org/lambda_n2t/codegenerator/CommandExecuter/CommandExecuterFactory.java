@@ -1,4 +1,4 @@
-package org.lambda_n2t.codegenerator;
+package org.lambda_n2t.codegenerator.CommandExecuter;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -4,13 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit.JavaCodeGeneratorUnitFactory;
-import org.lambda_n2t.codegenerator.DefaultsSetter;
-import org.lambda_n2t.codegenerator.DefaultsSetterFactory;
 
-import java.util.EmptyStackException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Observer;
 
 import static org.junit.Assert.assertTrue;
 
