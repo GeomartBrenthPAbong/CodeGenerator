@@ -28,10 +28,13 @@ public class VariablesUnit implements CodeGeneratorUnit {
         if (vars.isEmpty())
             return;
 
+        this.generatedCode.append("\n");
+
         for (Map.Entry<String, Map> var: vars.entrySet())
             this.generateVar(var.getValue());
 
         this.lastGeneratedCode = this.generatedCode.toString();
+        this.generatedCode.delete(0, this.generatedCode.length());
     }
 
     private void generateVar(Map var){

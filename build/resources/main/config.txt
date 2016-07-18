@@ -1,0 +1,2 @@
+language = java
+format = type@clsname@extends@implements@vars@fns@constructors@pname@imports

@@ -18,7 +18,7 @@ public class TokenClass {
     public static String par = "^[\\(\\)]$";
     public static String opposites = "^[<>]$";
     public static String importsSpecific = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_\\.\\*]*$";
-    public static String all = "^ *\\* *";
+    public static String all = "^ *\\* *$";
 
     public static Pattern accessibilityPattern = Pattern.compile(accessibility);
     public static Pattern cgStaticPattern = Pattern.compile(cgStatic);

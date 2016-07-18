@@ -15,17 +15,10 @@ import java.util.Map;
  */
 
 public class JavaCodeGenerator implements CodeGenerator {
-    private static JavaCodeGenerator instance = null;
     List<CodeGeneratorUnit> codeGenUnits = new ArrayList<CodeGeneratorUnit>();
 
-    public JavaCodeGenerator(){}
-
-    public static JavaCodeGenerator getInstance(){
-        if (instance == null) {
-            instance = new JavaCodeGenerator();
-            instance.init();
-        }
-        return instance;
+    public JavaCodeGenerator(){
+        this.init();
     }
 
     public void generate(Map map) {
@@ -48,9 +41,9 @@ public class JavaCodeGenerator implements CodeGenerator {
     }
 
     private void init(){
-        String[] units = new String[]{"header", "space", "imports",
-                "class_begin", "variables", "constructors",
-                "setters", "getters", "functions", "class_end"};
+        String[] units = new String[]{"header", "imports", "class_begin",
+                                      "variables", "constructors", "setters",
+                                      "getters", "functions", "class_end"};
 
         for (String unit: units)
             this.codeGenUnits.add(JavaCodeGeneratorUnitFactory.create(unit));

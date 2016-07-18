@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class ClassEndUnit implements CodeGeneratorUnit {
     public String getGeneratedCode() {
-        return "\t}\n";
+        return "}";
     }
 
     public void generate(Map map) {

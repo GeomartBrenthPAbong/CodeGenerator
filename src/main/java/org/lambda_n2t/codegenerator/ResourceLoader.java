@@ -7,7 +7,8 @@ import java.io.*;
  */
 
 public class ResourceLoader {
-    private static String[] loadables = new String[]{"header", "config", "constructors", "setters", "getters", "functions"};
+    private static String[] loadables = new String[]{"header", "config", "constructors",
+                                                     "setters", "getters", "functions", "config"};
 
 
     public static InputStream load(String resource){

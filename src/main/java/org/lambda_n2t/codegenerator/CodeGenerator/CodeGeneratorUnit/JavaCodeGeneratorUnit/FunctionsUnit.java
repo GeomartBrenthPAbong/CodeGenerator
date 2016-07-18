@@ -1,6 +1,7 @@
 package org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.JavaCodeGeneratorUnit;
 
 import org.lambda_n2t.codegenerator.CodeGenerator.CodeGeneratorUnit.CodeGeneratorUnit;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
 import java.util.Map;
 
@@ -21,47 +22,59 @@ public class FunctionsUnit implements CodeGeneratorUnit {
     }
 
     public void generate(Map map){
-        Map fnData = (Map) map.get("fns");
-        Map<String, String> versions = (Map) fnData.get("versions");
+        Map<String, Map> fns = (Map<String, Map>) map.get("fns");
 
-        if (fnData.isEmpty() || versions.isEmpty())
+        if (fns.isEmpty())
             return;
 
-        this.generatedCode.append(this.getComment());
-        StringBuilder preVersionString = new StringBuilder();
-        String preVersion, ret;
+        Map fnData;
+        Map<String, String> versions;
+        for (Map.Entry<String, Map> fn: fns.entrySet()) {
+            fnData = fn.getValue();
 
-        preVersionString.append(fnData.get("accessibility") + " ");
+            if (fnData.get("versions") == null)
+                continue;
 
-        if (fnData.containsKey("static"))
-            preVersionString.append(fnData.get("static") + " ");
+            versions = (Map<String, String>) fnData.get("versions");
 
-        if (fnData.containsKey("final"))
-            preVersionString.append(fnData.get("final") + " ");
+            StringBuilder preVersionString = new StringBuilder();
+            String preVersion, ret;
 
-        preVersionString.append(fnData.get("dataType") + " ");
-        preVersionString.append(fnData.get("identifier") + "(");
+            preVersionString.append(fnData.get("accessibility") + " ");
 
-        preVersion = preVersionString.toString();
-        ret = this.getReturn((String) fnData.get("dataType"));
-        Map type = (Map) map.get("type");
+            if (fnData.containsKey("static"))
+                preVersionString.append(fnData.get("static") + " ");
 
-        for (Map.Entry<String, String> version: versions.entrySet()){
-            this.generatedCode.append("\t" + preVersion + version.getValue() + ")");
+            if (fnData.containsKey("final"))
+                preVersionString.append(fnData.get("final") + " ");
 
-            if (type.get("identifier").equals("interface"))
-                this.generatedCode.append(";\n");
-            else
-                this.generatedCode.append(" {\n\t\t" + ret + "\n\t}\n\n");
+            preVersionString.append(fnData.get("dataType") + " ");
+            preVersionString.append(fnData.get("identifier") + "(");
+
+            preVersion = preVersionString.toString();
+            ret = this.getReturn((String) fnData.get("dataType"));
+            Map type = (Map) map.get("type");
+
+            for (Map.Entry<String, String> version : versions.entrySet()) {
+                this.generatedCode.append("\n\t" + preVersion + version.getValue() + ")");
+
+                if (type.get("identifier").equals("interface"))
+                    this.generatedCode.append(";");
+                else
+                    this.generatedCode.append(" {\n\t\t" + ret + "\n\t}\n");
+            }
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();
+
+        if (this.lastGeneratedCode.trim().length() > 0)
+            this.lastGeneratedCode = "\n" + this.getComment() + lastGeneratedCode;
+
+        this.generatedCode.delete(0, this.generatedCode.length());
     }
 
     private String getComment(){
-        return "\t//----------------------------------------------|\n" +
-                "\t// Other Function(s)\n" +
-                "\t//----------------------------------------------|\n\n";
+        return ResourceLoader.toString(ResourceLoader.load("functions"));
     }
 
     private String getReturn(String returnType){

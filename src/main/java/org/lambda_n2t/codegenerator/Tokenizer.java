@@ -76,16 +76,18 @@ public class Tokenizer implements AbstractTokenizer{
                 if (!currentChar.equals("|"))
                     strBuilder.deleteCharAt(strBuilder.length() - 1);
 
-                accumulatedChars = strBuilder.toString().trim();
-                tokenClass = this.identifyTokenClass(accumulatedChars);
+                if (strBuilder.toString().trim().length() > 0) {
+                    accumulatedChars = strBuilder.toString().trim();
+                    tokenClass = this.identifyTokenClass(accumulatedChars);
 
-                if (currentChar.equals("|"))
-                    accumulatedChars = accumulatedChars.substring(0, accumulatedChars.length() - 1).toString().trim();
+                    if (currentChar.equals("|"))
+                        accumulatedChars = accumulatedChars.substring(0, accumulatedChars.length() - 1).toString().trim();
 
-                Pair<String, String> token = this.createToken(tokenClass, accumulatedChars);
-                strBuilder.delete(0, strBuilder.length());
+                    Pair<String, String> token = this.createToken(tokenClass, accumulatedChars);
+                    strBuilder.delete(0, strBuilder.length());
 
-                this.tokens.add(token);
+                    this.tokens.add(token);
+                }
 
                 Matcher parMatcher = TokenClass.parPattern.matcher(currentChar);
 

@@ -39,10 +39,9 @@ public class FnMapChanger implements MapChanger {
                 else
                     curFn.put(key, fnData.get(key));
             }
-
         }
         else
-            fnsmap.put(fnData.get("identifier"), fnData);
+            fnsmap.put(fnData.get("identifier"), curFn);
 
         Pair<String, String> version = this.extractVersion(tokens, index);
 
