@@ -1,6 +1,9 @@
 # CodeGenerator
 A command line program for quickly generating starting code(generates java for now but it can be extended). Useful if you are not using any IDE or you just want to generate starting code using the cli.
 
+You can change the comments(header, constructors, setters, getters, functions) by creating your own .txt file
+beside your jar file (names should be header.txt, constructors.txt, setters.txt, getters.txt, functions.txt).
+
 There are two ways to generate a java file:
 
 1.) Using mapped args separated by '@' symbol which are then mapped to the format
@@ -136,4 +139,4 @@ The full format for a function arg:
 The full format for constructor arg:
     [paramDataType1|paramName1[,paramDataType2|paramName2,...]]
 
-    That is optional because you can enter nothing(space if you use the first way of entering your commands) for the default constructor
+That is optional because you can enter nothing(space if you use the first way of entering your commands) for the default constructor
