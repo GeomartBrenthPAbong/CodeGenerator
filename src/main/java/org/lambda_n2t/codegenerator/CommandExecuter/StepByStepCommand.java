@@ -53,8 +53,9 @@ public class StepByStepCommand implements CommandExecuter {
                     for (String arg : curArg.split(";"))
                         machine.add(curCommand, arg);
 
+                    System.out.println("Done.");
                 } catch (Exception e) {
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
                 }
             }
         }

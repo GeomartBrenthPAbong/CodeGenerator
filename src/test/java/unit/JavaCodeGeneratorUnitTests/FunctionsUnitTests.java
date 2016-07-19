@@ -71,8 +71,8 @@ public class FunctionsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
-        expectedStr += "\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -97,10 +97,10 @@ public class FunctionsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
-        expectedStr += "\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\n\tpublic String processHouseName() {\n\t\treturn null;\n\t}\n\n";
         expectedStr += "\tpublic String processHouseName(String daddyName, int age) {\n\t\treturn null;\n\t}\n\n";
-        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName) {\n\t\treturn null;\n\t}\n";
+        expectedStr += "\tpublic String processHouseName(String daddyName, String motherName) {\n\t\treturn null;\n\t}";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -128,8 +128,8 @@ public class FunctionsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
-        expectedStr += "\n\tpublic String processHouseName();\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("functions"));
+        expectedStr += "\n\n\tpublic String processHouseName();\n";
         expectedStr += "\tpublic String processHouseName(String daddyName, int age);\n";
         expectedStr += "\tpublic String processHouseName(String daddyName, String motherName);";
 

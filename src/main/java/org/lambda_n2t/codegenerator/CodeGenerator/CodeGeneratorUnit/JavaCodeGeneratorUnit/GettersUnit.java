@@ -31,19 +31,29 @@ public class GettersUnit implements CodeGeneratorUnit {
 
         Pair<String, String> paramTypeAndName;
         this.generatedCode.append("\n");
+        this.generatedCode.append("\n");
         this.generatedCode.append(this.getComment());
+
         Map type = (Map) map.get("type");
+
+        int counter = 0;
 
         for (Map.Entry<String, Pair<String, String>> setter: setters.entrySet()){
             paramTypeAndName = setter.getValue();
+
+            if (!type.get("identifier").equals("interface") || counter == 0)
+                this.generatedCode.append("\n");
+
             this.generatedCode.append("\n\tpublic " + paramTypeAndName.getKey() + " get" + paramTypeAndName.getValue() + "()");
 
             if (type.get("identifier").equals("interface"))
                 this.generatedCode.append(";");
             else {
                 this.generatedCode.append(" {\n\t\treturn this." + setter.getKey() + ";\n");
-                this.generatedCode.append("\t}\n");
+                this.generatedCode.append("\t}");
             }
+
+            counter++;
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();

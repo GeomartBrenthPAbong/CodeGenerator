@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FnsTokenizerDecoratorTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-07-13T13:52:21" hostname="n2t" time="0.008">
-  <properties/>
-  <testcase name="shouldChangeSomeIdentifiersToDataTypes" classname="FnsTokenizerDecoratorTests" time="0.008"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

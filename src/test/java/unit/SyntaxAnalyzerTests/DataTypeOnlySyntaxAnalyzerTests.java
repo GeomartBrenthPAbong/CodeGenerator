@@ -15,7 +15,7 @@ public class DataTypeOnlySyntaxAnalyzerTests {
 
     @Before
     public void instantiations(){
-        this.a = SyntaxAnalyzerFactory.create("rmconstructor");
+        this.a = SyntaxAnalyzerFactory.create("rmconstructors");
     }
 
     @Test

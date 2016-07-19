@@ -15,7 +15,7 @@ public class ParamSyntaxAnalyzerTests {
 
     @Before
     public void instantiations(){
-        this.a = SyntaxAnalyzerFactory.create("constructor");
+        this.a = SyntaxAnalyzerFactory.create("constructors");
     }
 
     @Test
@@ -44,20 +44,6 @@ public class ParamSyntaxAnalyzerTests {
         String input = "   List<String>  |  spaces   , Pair<int, Pair<int, Pair<string, string>>> |  test";
 
         this.accept(input);
-    }
-
-    @Test(expected = InputMismatchException.class)
-    public void shouldNotAcceptDataTypeOnly(){
-        String input = "String";
-
-        this.a.analyze(input);
-    }
-
-    @Test(expected = InputMismatchException.class)
-    public void shouldNotAcceptIdentifierOnly(){
-        String input = "string";
-
-        this.a.analyze(input);
     }
 
     private void accept(String input){

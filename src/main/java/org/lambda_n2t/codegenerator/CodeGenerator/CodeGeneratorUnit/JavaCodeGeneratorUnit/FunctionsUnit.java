@@ -29,6 +29,7 @@ public class FunctionsUnit implements CodeGeneratorUnit {
 
         Map fnData;
         Map<String, String> versions;
+        int counter = 0;
         for (Map.Entry<String, Map> fn: fns.entrySet()) {
             fnData = fn.getValue();
 
@@ -56,19 +57,24 @@ public class FunctionsUnit implements CodeGeneratorUnit {
             Map type = (Map) map.get("type");
 
             for (Map.Entry<String, String> version : versions.entrySet()) {
+                if (!type.get("identifier").equals("interface") || counter == 0)
+                    this.generatedCode.append("\n");
+
                 this.generatedCode.append("\n\t" + preVersion + version.getValue() + ")");
 
                 if (type.get("identifier").equals("interface"))
                     this.generatedCode.append(";");
                 else
-                    this.generatedCode.append(" {\n\t\t" + ret + "\n\t}\n");
+                    this.generatedCode.append(" {\n\t\t" + ret + "\n\t}");
+
+                counter++;
             }
         }
 
         this.lastGeneratedCode = this.generatedCode.toString();
 
         if (this.lastGeneratedCode.trim().length() > 0)
-            this.lastGeneratedCode = "\n" + this.getComment() + lastGeneratedCode;
+            this.lastGeneratedCode = "\n\n" + this.getComment() + this.lastGeneratedCode;
 
         this.generatedCode.delete(0, this.generatedCode.length());
     }

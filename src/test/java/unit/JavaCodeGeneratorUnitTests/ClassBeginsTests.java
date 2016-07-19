@@ -45,7 +45,7 @@ public class ClassBeginsTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\npublic final class Labrador extends Dog implements Animal, Pet {\n";
+        String expectedStr = "\n\npublic final class Labrador extends Dog implements Animal, Pet {";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

@@ -21,12 +21,12 @@ public class ClassBeginUnit implements CodeGeneratorUnit{
     }
 
     public void generate(Map map) {
-        this.generatedCode.append("\n");
+        this.generatedCode.append("\n\n");
         this.generateType(map);
         this.generatedCode.append(map.get("clsname"));
         this.generateExtends(map);
         this.generateImplements(map);
-        this.generatedCode.append(" {\n");
+        this.generatedCode.append(" {");
 
         this.lastGeneratedCode = this.generatedCode.toString();
         this.generatedCode.delete(0, this.generatedCode.length());

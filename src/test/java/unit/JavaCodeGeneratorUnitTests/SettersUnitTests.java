@@ -49,9 +49,9 @@ public class SettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("setters"));
-        expectedStr += "\n\tpublic void setHouseName(String houseName) {\n\t\tthis.houseName = houseName;\n\t}\n";
-        expectedStr += "\n\tpublic void setOwnerName(String ownerName) {\n\t\tthis.ownerName = ownerName;\n\t}\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("setters"));
+        expectedStr += "\n\n\tpublic void setHouseName(String houseName) {\n\t\tthis.houseName = houseName;\n\t}\n";
+        expectedStr += "\n\tpublic void setOwnerName(String ownerName) {\n\t\tthis.ownerName = ownerName;\n\t}";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -68,8 +68,8 @@ public class SettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("setters"));
-        expectedStr += "\n\tpublic void setHouseName(String houseName);\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("setters"));
+        expectedStr += "\n\n\tpublic void setHouseName(String houseName);\n";
         expectedStr += "\tpublic void setOwnerName(String ownerName);";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));

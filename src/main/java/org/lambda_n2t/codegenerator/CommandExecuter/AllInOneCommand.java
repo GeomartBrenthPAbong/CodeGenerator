@@ -28,21 +28,24 @@ public class AllInOneCommand implements CommandExecuter {
             String curArgs;
 
             for (String command : commands) {
-                curArgs = args[index];
+                command = command.trim();
+                curArgs = args[index++];
 
                 try {
-                    for (String curArg: curArgs.split(";"))
-                        machine.add(command, curArg);
+                    for (String curArg: curArgs.split(";")) {
+                        if (curArg.length() > 0)
+                            machine.add(command, curArg);
+                    }
                 }
                 catch (Exception e){
-                    System.out.println(e);
-                    continue;
+                    System.out.println(e.getMessage());
                 }
             }
         }
         catch (ArrayIndexOutOfBoundsException e){}
         finally {
             machine.generate();
+            System.out.println("Code generated.");
         }
     }
 }

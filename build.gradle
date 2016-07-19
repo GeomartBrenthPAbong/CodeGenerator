@@ -9,7 +9,9 @@ sourceSets {
 }
 
 jar {
-    manifest.attributes "Main-Class": "org.lambda_n2t.codegenerator.Driver"
+    manifest {
+        attributes "Main-Class": "org.lambda_n2t.codegenerator.Driver"
+    }
 }
 
 sourceCompatibility = 1.8

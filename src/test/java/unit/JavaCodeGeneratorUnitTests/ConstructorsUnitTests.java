@@ -37,10 +37,10 @@ public class ConstructorsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("constructors"));
-        expectedStr += "\n\tpublic Test() {\n\n\t}\n\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("constructors"));
+        expectedStr += "\n\n\tpublic Test() {\n\n\t}\n\n";
         expectedStr += "\tpublic Test(String str, int n) {\n\n\t}\n\n";
-        expectedStr += "\tpublic Test(String str) {\n\n\t}\n";
+        expectedStr += "\tpublic Test(String str) {\n\n\t}";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

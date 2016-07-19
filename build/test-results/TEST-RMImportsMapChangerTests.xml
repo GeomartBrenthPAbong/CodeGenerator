@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RMImportsMapChangerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-18T08:19:07" hostname="n2t" time="0.002">
+<testsuite name="RMImportsMapChangerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-19T15:15:53" hostname="n2t" time="0.001">
   <properties/>
-  <testcase name="allShouldBeRemoved" classname="RMImportsMapChangerTests" time="0.001"/>
+  <testcase name="allShouldBeRemoved" classname="RMImportsMapChangerTests" time="0.0"/>
   <testcase name="importNamesShouldBeRemoved" classname="RMImportsMapChangerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
