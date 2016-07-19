@@ -7,9 +7,10 @@ import java.util.Map;
 /**
  * Created by Geomart Brenth Abong on 7/16/2016.
  */
+
 public class ClassEndUnit implements CodeGeneratorUnit {
     public String getGeneratedCode() {
-        return "}";
+        return "\n}";
     }
 
     public void generate(Map map) {

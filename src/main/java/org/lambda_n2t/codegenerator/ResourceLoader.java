@@ -8,18 +8,17 @@ import java.io.*;
 
 public class ResourceLoader {
     private static String[] loadables = new String[]{"header", "config", "constructors",
-                                                     "setters", "getters", "functions", "config"};
-
+                                                     "setters", "getters", "functions", "config", "help"};
 
     public static InputStream load(String resource){
         if (!bruteForceSearchItem(resource))
             return null;
 
         try {
-            String jarPath = ClassLoader.getSystemClassLoader().getResource(".").getPath();
-            File userResource = new File(jarPath + "/" + resource + ".txt");
+            String userResourcesPath = ResourceLoader.getUserResourcesPath();
+            File userResource = new File(userResourcesPath + resource + ".txt");
 
-            if (userResource.exists()) {
+            if (!resource.equals("help") && userResource.exists()) {
                 return new FileInputStream(userResource);
             } else {
                 return ResourceLoader.class.getClassLoader().getResourceAsStream(resource + ".txt");
@@ -40,7 +39,7 @@ public class ResourceLoader {
             while((line = bufferedReader.readLine()) != null )
                 str.append(line + "\n");
 
-            return str.toString();
+            return str.substring(0, str.length() - 1);
         }
         catch(IOException e) {
             System.err.println( "Error: " + e );
@@ -54,5 +53,16 @@ public class ResourceLoader {
             if (loadable.equals(resource))
                 return true;
         return false;
+    }
+
+    private static String getUserResourcesPath(){
+        String path;
+
+        String jarPath = ClassLoader.getSystemClassLoader().getResource("config.txt").getPath();
+        File jar = new File(jarPath);
+        String absJarPath = jar.getParent();
+        path = absJarPath.substring(0, absJarPath.lastIndexOf(jar.separator)).replace("file:\\", "");
+
+        return path + jar.separator;
     }
 }

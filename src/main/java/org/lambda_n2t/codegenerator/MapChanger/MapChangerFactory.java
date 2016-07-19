@@ -19,9 +19,9 @@ public class MapChangerFactory {
             return new PNameMapChanger();
         else if(type.equals("clsname"))
             return new ClassNameMapChanger();
-        else if(type.equals("constructor"))
+        else if(type.equals("constructors"))
             return new ConstructorMapChanger();
-        else if(type.equals("rmconstructor"))
+        else if(type.equals("rmconstructors"))
             return new RMConstructorMapChanger();
         else if(type.equals("extends"))
             return new ExtendsMapChanger();

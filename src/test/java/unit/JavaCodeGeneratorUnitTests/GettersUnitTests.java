@@ -49,9 +49,9 @@ public class GettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("getters"));
-        expectedStr += "\n\tpublic String getHouseName() {\n\t\treturn this.houseName;\n\t}\n\n";
-        expectedStr += "\tpublic String getOwnerName() {\n\t\treturn this.ownerName;\n\t}\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("getters"));
+        expectedStr += "\n\n\tpublic String getHouseName() {\n\t\treturn this.houseName;\n\t}\n\n";
+        expectedStr += "\tpublic String getOwnerName() {\n\t\treturn this.ownerName;\n\t}";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }
@@ -68,8 +68,8 @@ public class GettersUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\n" + ResourceLoader.toString(ResourceLoader.load("getters"));
-        expectedStr += "\n\tpublic String getHouseName();\n";
+        String expectedStr = "\n\n" + ResourceLoader.toString(ResourceLoader.load("getters"));
+        expectedStr += "\n\n\tpublic String getHouseName();\n";
         expectedStr += "\tpublic String getOwnerName();";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ExtendsMapChangerTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-18T08:19:07" hostname="n2t" time="0.002">
+<testsuite name="ExtendsMapChangerTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-19T15:15:53" hostname="n2t" time="0.002">
   <properties/>
   <testcase name="clsNameShouldBeChanged" classname="ExtendsMapChangerTests" time="0.001"/>
   <testcase name="clsNameShouldBeRemoved" classname="ExtendsMapChangerTests" time="0.0"/>

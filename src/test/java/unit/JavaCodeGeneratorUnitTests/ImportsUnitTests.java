@@ -33,8 +33,8 @@ public class ImportsUnitTests {
 
         this.unit.generate(this.map);
 
-        String expectedStr = "\nimport Test;\n";
-        expectedStr += "import java.io.*;\n";
+        String expectedStr = "\n\nimport Test;\n";
+        expectedStr += "import java.io.*;";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

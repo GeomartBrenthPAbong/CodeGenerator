@@ -22,7 +22,7 @@ public abstract class SyntaxAnalyzer {
         Matcher m = this.p.matcher(input);
 
         if (!m.matches())
-            throw new InputMismatchException("Invalid Syntax.");
+            throw new InputMismatchException("Invalid argument syntax: " + input);
     }
 
     public void analyze(List<Pair<String, String>> tokens) throws InputMismatchException{

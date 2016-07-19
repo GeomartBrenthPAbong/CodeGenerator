@@ -38,7 +38,7 @@ public class VariablesUnit implements CodeGeneratorUnit {
     }
 
     private void generateVar(Map var){
-        this.generatedCode.append("\t" + var.get("accessibility") + " ");
+        this.generatedCode.append("\n\t" + var.get("accessibility") + " ");
 
         if(var.containsKey("static"))
             this.generatedCode.append(var.get("static") + " ");
@@ -47,6 +47,6 @@ public class VariablesUnit implements CodeGeneratorUnit {
             this.generatedCode.append(var.get("final") + " ");
 
         this.generatedCode.append(var.get("dataType") + " ");
-        this.generatedCode.append(var.get("identifier") + ";\n");
+        this.generatedCode.append(var.get("identifier") + ";");
     }
 }

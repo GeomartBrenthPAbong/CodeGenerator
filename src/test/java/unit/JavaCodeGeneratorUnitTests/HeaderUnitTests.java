@@ -41,7 +41,7 @@ public class HeaderUnitTests {
         expectedStr += "// Programmer: Geomart Brenth Abong\n";
         expectedStr += "// Date Created: " + curDate + "\n";
         expectedStr += "//\n";
-        expectedStr += "//----------------------------------------------|\n";
+        expectedStr += "//----------------------------------------------|";
 
         assertTrue(expectedStr.equals(this.unit.getGeneratedCode()));
     }

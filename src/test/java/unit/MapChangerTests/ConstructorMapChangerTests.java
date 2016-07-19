@@ -19,7 +19,7 @@ public class ConstructorMapChangerTests {
 
     @Before
     public void instantiations(){
-        this.mapChanger = MapChangerFactory.create("constructor");
+        this.mapChanger = MapChangerFactory.create("constructors");
         this.map = new HashMap();
 
         this.map.put("constructors", new HashMap());

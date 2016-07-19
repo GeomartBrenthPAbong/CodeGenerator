@@ -1,5 +1,7 @@
 package org.lambda_n2t.codegenerator.DefaultsSetter;
 
+import org.lambda_n2t.codegenerator.Settings;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +33,7 @@ public class MapDefaultsSetter implements DefaultsSetter{
         this.setClsName(map);
         this.setVarsDefaults((Map<String, Map>) map.get("vars"));
         this.setFnsDefaults((Map<String, Map>) map.get("fns"));
+        this.setProgrammerName(map);
     }
 
     private void setClassTypeDefaults(Map map){
@@ -91,6 +94,19 @@ public class MapDefaultsSetter implements DefaultsSetter{
                 if (fn.containsKey(item))
                     fn.put(item, this.codeEquals.get(fn.get(item)));
             }
+        }
+    }
+
+    private void setProgrammerName(Map map){
+        String pname = (String) map.get("pname");
+
+        if (pname.trim().equals("")) {
+            Settings settings = Settings.getInstance();
+
+            try {
+                map.put("pname", settings.get("pname"));
+            }
+            catch (Exception e) {}
         }
     }
 }

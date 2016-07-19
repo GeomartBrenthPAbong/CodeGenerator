@@ -20,8 +20,8 @@ public class RMConstructorMapChangerTests {
 
     @Before
     public void instantiations(){
-        this.constructorMapChanger = MapChangerFactory.create("constructor");
-        this.rmConstructorMapChanger = MapChangerFactory.create("rmconstructor");
+        this.constructorMapChanger = MapChangerFactory.create("constructors");
+        this.rmConstructorMapChanger = MapChangerFactory.create("rmconstructors");
         this.map = new HashMap();
 
         this.map.put("constructors", new HashMap());

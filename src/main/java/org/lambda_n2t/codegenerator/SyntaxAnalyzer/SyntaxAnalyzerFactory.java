@@ -17,15 +17,15 @@ public class SyntaxAnalyzerFactory {
             return new IdentifierOnlySyntaxAnalyzer();
         else if(type.equals("rmfns"))
             return new RMFnSyntaxAnalyzer();
-        else if(type.equals("constructor"))
+        else if(type.equals("constructors"))
             return new ParamSyntaxAnalyzer();
-        else if(type.equals("rmconstructor"))
+        else if(type.equals("rmconstructors"))
             return new DataTypeOnlySyntaxAnalyzer();
         else if(type.equals("imports") || type.equals("rmimports"))
             return new ImportsSyntaxAnalyzer();
         else if(type.equals("pname"))
             return new AlwaysPassesSyntaxAnalyzer();
         else
-            throw new IllegalArgumentException("Invalid Syntax Analyzer.");
+            throw new IllegalArgumentException("Invalid command.");
     }
 }

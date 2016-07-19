@@ -7,12 +7,12 @@ import java.util.regex.Pattern;
  */
 public class ParamSyntaxAnalyzer extends SyntaxAnalyzer {
     public ParamSyntaxAnalyzer(){
-        String pattern = "^ *" +
+        String pattern = "^( *" +
                             "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
                             " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]* *" +
                             "(, *[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
                             " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]*)*" +
-                         " *$";
+                         " *)|.*$";
         this.p = Pattern.compile(pattern);
     }
 }
