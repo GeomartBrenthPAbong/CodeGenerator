@@ -33,5 +33,10 @@ public class HeaderUnit implements CodeGeneratorUnit {
 
         this.generatedCode = this.header.replaceAll("%programmer_name%", (String) map.get("pname"));
         this.generatedCode = this.generatedCode.replaceAll("%date_created%", curDate);
+
+        String pkg = (String) map.get("package");
+
+        if (pkg != null && !pkg.equals(""))
+            this.generatedCode = "package " + pkg + ";\n\n" + this.generatedCode;
     }
 }

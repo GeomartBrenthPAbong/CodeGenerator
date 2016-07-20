@@ -29,11 +29,24 @@ public class MapDefaultsSetter implements DefaultsSetter{
     }
 
     public void set(Map map){
+        this.setPackage(map);
         this.setClassTypeDefaults(map);
         this.setClsName(map);
         this.setVarsDefaults((Map<String, Map>) map.get("vars"));
         this.setFnsDefaults((Map<String, Map>) map.get("fns"));
         this.setProgrammerName(map);
+    }
+
+    private void setPackage(Map map){
+        String pkg = (String) map.get("package");
+
+        if (pkg == null || pkg.trim().equals("")) {
+            Settings settings = Settings.getInstance();
+            try {
+                map.put("package", settings.get("package"));
+            }
+            catch (Exception e){}
+        }
     }
 
     private void setClassTypeDefaults(Map map){

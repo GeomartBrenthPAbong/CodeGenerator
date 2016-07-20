@@ -80,6 +80,7 @@ public class Machine {
 
         this.map.put("type", new HashMap());
         this.map.put("pname", "");
+        this.map.put("package", "");
         this.map.put("clsname", "");
         this.map.put("extends", "");
         this.map.put("implements", new HashMap());
