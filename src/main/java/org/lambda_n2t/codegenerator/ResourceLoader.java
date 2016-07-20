@@ -55,7 +55,7 @@ public class ResourceLoader {
         return false;
     }
 
-    private static String getUserResourcesPath(){
+    public static String getUserResourcesPath(){
         String path;
 
         String jarPath = ClassLoader.getSystemClassLoader().getResource("config.txt").getPath();

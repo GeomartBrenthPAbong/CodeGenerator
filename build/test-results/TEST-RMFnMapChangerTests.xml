@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RMFnMapChangerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-19T15:15:53" hostname="n2t" time="0.002">
+<testsuite name="RMFnMapChangerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-20T15:54:45" hostname="n2t" time="0.003">
   <properties/>
   <testcase name="allShouldBeRemoved" classname="RMFnMapChangerTests" time="0.001"/>
   <testcase name="fnDataShouldBeRemoved" classname="RMFnMapChangerTests" time="0.0"/>
-  <testcase name="shouldBeUntouched" classname="RMFnMapChangerTests" time="0.001"/>
-  <testcase name="shouldNotHaveTheVersionSpecifiedAndDifferentReturnTypeAndNoStatic" classname="RMFnMapChangerTests" time="0.0"/>
+  <testcase name="shouldBeUntouched" classname="RMFnMapChangerTests" time="0.0"/>
+  <testcase name="shouldNotHaveTheVersionSpecifiedAndDifferentReturnTypeAndNoStatic" classname="RMFnMapChangerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

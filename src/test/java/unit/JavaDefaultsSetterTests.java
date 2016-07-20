@@ -2,10 +2,13 @@ package unit;
 
 import javafx.util.Pair;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetter;
 import org.lambda_n2t.codegenerator.DefaultsSetter.DefaultsSetterFactory;
+import org.lambda_n2t.codegenerator.ResourceLoader;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -20,6 +23,12 @@ public class JavaDefaultsSetterTests {
     private DefaultsSetter d;
     private Map map;
 
+    @BeforeClass
+    public static void deleteConfigFile(){
+        File f = new File(ResourceLoader.getUserResourcesPath() + "config.txt");
+        f.delete();
+    }
+
     @Before
     public void instantiations(){
         this.d = DefaultsSetterFactory.create("java");
@@ -27,6 +36,7 @@ public class JavaDefaultsSetterTests {
 
         this.map.put("type", new HashMap());
         this.map.put("pname", "");
+        this.map.put("package", "");
         this.map.put("clsname", "");
         this.map.put("extends", "");
         this.map.put("implements", new HashMap());
@@ -85,6 +95,7 @@ public class JavaDefaultsSetterTests {
 
         expectedMap.put("type", new HashMap());
         expectedMap.put("pname", "");
+        expectedMap.put("package", "");
         expectedMap.put("clsname", "ClassName");
         expectedMap.put("extends", "");
         expectedMap.put("implements", new HashMap());
@@ -189,6 +200,7 @@ public class JavaDefaultsSetterTests {
 
         expectedMap.put("type", new HashMap());
         expectedMap.put("pname", "");
+        expectedMap.put("package", "");
         expectedMap.put("clsname", "ClassName");
         expectedMap.put("extends", "");
         expectedMap.put("implements", new HashMap());

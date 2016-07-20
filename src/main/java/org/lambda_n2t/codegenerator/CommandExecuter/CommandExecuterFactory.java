@@ -21,6 +21,9 @@ public class CommandExecuterFactory {
             else
                 return new StepByStepCommand();
         }
+        else if(args.length == 2) {
+            return new SettingChangerCommand();
+        }
         else
             return new StepByStepCommand();
     }
