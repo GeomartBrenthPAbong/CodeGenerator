@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DataTypeOnlySyntaxAnalyzerTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-07-20T15:54:45" hostname="n2t" time="0.007">
+<testsuite name="DataTypeOnlySyntaxAnalyzerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-22T14:47:56" hostname="n2t" time="0.004">
   <properties/>
-  <testcase name="shouldAcceptGenerics" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.002"/>
-  <testcase name="shouldAcceptMultipleDataTypes" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.0"/>
+  <testcase name="shouldAcceptGenerics" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptMultipleDataTypes" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.001"/>
+  <testcase name="shouldAcceptArray" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptSingleDataType" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.001"/>
   <testcase name="shouldAcceptSingleGenericDataType" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.0"/>
   <testcase name="shouldAcceptUnacceptableJavaSyntax" classname="DataTypeOnlySyntaxAnalyzerTests" time="0.001"/>

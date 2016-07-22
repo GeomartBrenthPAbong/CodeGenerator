@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-20T15:54:45" hostname="n2t" time="0.004">
+<testsuite name="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-22T14:47:56" hostname="n2t" time="0.004">
   <properties/>
   <testcase name="shouldBeNoGeneration" classname="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" time="0.001"/>
   <testcase name="shouldGenerateTheCorrespondingSetters" classname="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" time="0.001"/>
-  <testcase name="shouldHaveNoFunctionBodyIfInterface" classname="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" time="0.002"/>
+  <testcase name="shouldHaveNoFunctionBodyIfInterface" classname="unit.JavaCodeGeneratorUnitTests.SettersUnitTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

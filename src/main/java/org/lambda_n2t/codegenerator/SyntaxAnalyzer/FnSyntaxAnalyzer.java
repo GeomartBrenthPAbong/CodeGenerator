@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
 public class FnSyntaxAnalyzer extends SyntaxAnalyzer {
     public FnSyntaxAnalyzer(){
         String pattern = "^ *[\\+\\-#]? *\\^? *!? *" +
-                         "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
+                         "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?( *\\[ *\\] *)*" +
                          " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]*" +
                          " *(\\( *" +
                          "(" +
-                            "([a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
+                            "([a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?( *\\[ *\\] *)*" +
                             " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]*) *(, *" +
-                                "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
+                                "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?( *\\[ *\\] *)*" +
                                 " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]*" +
                             ")*" +
                          ")?" +

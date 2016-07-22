@@ -53,6 +53,13 @@ public class DataTypeOnlySyntaxAnalyzerTests {
         this.accept(input);
     }
 
+    @Test
+    public void shouldAcceptArray(){
+        String input = "Pair<String, int> List<Pair<String, int>>[] , char[][] ,   boolean[], String[][][],   Integer[]  ";
+
+        this.accept(input);
+    }
+
     private void accept(String input){
         try{
             this.a.analyze(input);

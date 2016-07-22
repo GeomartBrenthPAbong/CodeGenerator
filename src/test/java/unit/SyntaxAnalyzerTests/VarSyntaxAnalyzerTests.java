@@ -39,6 +39,13 @@ public class VarSyntaxAnalyzerTests {
         this.accept(input);
     }
 
+    @Test
+    public void shouldAcceptArray(){
+        String input = "-   ^ ! String[][]  | str   (NewName)";
+
+        this.accept(input);
+    }
+
     private void accept(String input){
         try{
             this.a.analyze(input);

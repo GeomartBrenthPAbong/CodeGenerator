@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class VarSyntaxAnalyzer extends SyntaxAnalyzer {
     public VarSyntaxAnalyzer(){
         String pattern = "^ *[\\+\\-#]? *\\^? *!? *" +
-                         "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?" +
+                         "[a-zA-Z\\$_][a-zA-Z0-9\\$_ ]*( *<[a-zA-Z0-9\\$_ <>,]*> *)?( *\\[ *\\] *)*" +
                          " *\\| *[a-zA-Z\\$_][a-zA-Z0-9\\$_]*" +
                          " *(\\( *" +
                             "(([a-zA-Z\\$_][a-zA-Z0-9\\$_]*)|" +

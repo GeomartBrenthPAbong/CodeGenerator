@@ -46,6 +46,13 @@ public class FnSyntaxAnalyzerTests {
         this.accept(input);
     }
 
+    @Test
+    public void shouldAcceptArray(){
+        String input = "unsigned long int[][]|str(String[]|str,  int[][]|num, char[]  |  s)";
+
+        this.accept(input);
+    }
+
     @Test(expected = InputMismatchException.class)
     public void shouldNotAcceptMultiplePar(){
         String input = "unsigned long int|str((String|int))";
