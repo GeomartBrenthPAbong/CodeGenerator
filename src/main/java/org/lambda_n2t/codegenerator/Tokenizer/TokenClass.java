@@ -12,7 +12,7 @@ public class TokenClass {
     public static String specialChar = "^[\\+\\-#\\^\\!]$";
     public static String identifier = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_]*$";
     public static String separator = "^[\\|:;,\\(\\)]$";
-    public static String dataType = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_ <>,]* *\\|$";
+    public static String dataType = "^[a-zA-Z\\$_][a-zA-Z0-9\\$_ <>,]*( *\\[ *\\] *)* *\\|$";
     public static String openPar = "^\\($";
     public static String closePar = "^\\)$";
     public static String par = "^[\\(\\)]$";

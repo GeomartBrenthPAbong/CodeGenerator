@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.MachineTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-20T15:54:45" hostname="n2t" time="0.027">
+<testsuite name="unit.MachineTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-07-22T14:47:56" hostname="n2t" time="0.034">
   <properties/>
-  <testcase name="shouldGenerateTheSameWithTheGivenVarsInput" classname="unit.MachineTests" time="0.008"/>
+  <testcase name="shouldGenerateTheSameWithTheGivenVarsInput" classname="unit.MachineTests" time="0.014"/>
   <testcase name="shouldTrowException" classname="unit.MachineTests" time="0.0"/>
-  <testcase name="shouldGenerateTheSameStringEvenWithNoInput" classname="unit.MachineTests" time="0.009"/>
+  <testcase name="shouldGenerateTheSameStringEvenWithNoInput" classname="unit.MachineTests" time="0.01"/>
   <testcase name="shouldGenerateTheSameGivenFns" classname="unit.MachineTests" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
